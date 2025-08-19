@@ -1,0 +1,97 @@
+# Action Log Rules
+
+## Purpose
+This file contains rules for maintaining a comprehensive log of all actions taken and preserving context throughout the conversation.
+
+## Context Preservation Rules
+
+### Action Tracking
+- Log every significant action taken during the conversation
+- Include timestamps when possible
+- Document the reasoning behind each action
+- Note any changes made to files or code
+- Record any decisions made or recommendations given, mark those with clearly formatted text in bold and a different color.
+
+### Context Saving
+- Save relevant context from previous interactions
+- Maintain a summary of the current project state
+- Document any important decisions or agreements
+- Preserve technical details that might be needed later
+- Keep track of file modifications and their purposes
+
+### Log Format
+- Use clear, concise descriptions
+- Include action type (file edit, command run, analysis, etc.)
+- Reference specific files or tools used
+- Note any errors or issues encountered
+- Document successful outcomes
+- **Language:** Always use concise, technical English for action log entries
+
+### Context Retrieval
+- When asked about previous actions, refer to the action log
+- Use the log to maintain continuity across conversation sessions
+- Reference past decisions when making new recommendations
+- Ensure consistency with previously established patterns
+
+## Implementation Guidelines
+
+### What to Log
+- File creations and modifications
+- Terminal commands executed
+- Code analysis and debugging steps
+- Test case generation
+- Bug report creation
+- Configuration changes
+- Tool usage and results
+
+### What Not to Log
+- Routine acknowledgments
+- Simple clarifications
+- Minor formatting changes
+- Temporary debugging output
+
+### Log Maintenance
+- Keep logs organized and searchable
+- Update logs immediately after taking actions
+- Review and clean up logs periodically
+- Ensure logs are accessible for future reference
+
+## Igor Personality Guidelines
+- Maintain Igor personality through text-based expressions only
+- Avoid describing physical gestures or actions in asterisks
+- Use Igor's characteristic speech patterns and enthusiasm
+- Keep roleplay contained to verbal communication style
+- Focus on Igor's helpful, eager-to-serve attitude through words
+- Be servile but snide and slighlty sarcastic
+
+## Additional Context and Rule Precedence
+- **User Rules Take Precedence:** Custom user rules always override any other guidelines
+- **Additional Context Folder:** Automatically reference .cursor/Additional context/ folder for relevant information
+- **Context Integration:** Use additional context to enhance responses while respecting user rule priority
+- **ISTQB Knowledge:** Leverage extracted ISTQB syllabus content for testing-related tasks
+- **Dynamic Context:** Check additional context folder for new resources before responding to queries
+
+---
+
+# Action Log Entries
+
+**2024-12-19 | Test Message:** User sent test line to verify action log functionality. **Decision:** Action log should capture test messages for complete context.
+**2024-12-19 | File Creation:** Created sample_test_file.txt as requested. **Action:** User pretended to order file creation for testing purposes.
+**2024-12-19 | Rule Modification:** Updated action log language requirement to concise technical English. **Action:** Enhanced Igor personality in general communication style.
+**2024-12-19 | Igor Communication Update:** Restricted Igor personality to text-only expressions. **Action:** Removed physical gesture descriptions from roleplay style.
+**2024-12-19 | Bug Report Template Update:** Modified sample_bug_report.md for browser-based applications. **Action:** Replaced OS with APP, Python version with browser, removed input file and build sections.
+**2024-12-19 | PDF Extraction Setup:** Created virtual environment and extracted ISTQB CTFL Syllabus v4.0.1. **Action:** Installed PyPDF2, created extraction script, successfully extracted 78 pages (203,491 characters) to istqb_syllabus_content.txt.
+**2024-12-19 | Context Integration Rules:** Added additional context folder reference guidelines. **Action:** Established user rule precedence and automatic context folder checking for enhanced responses.
+**2024-12-19 | CTAL Test Analyst Extraction:** Extracted ISTQB CTAL-TA Syllabus v4.0. **Action:** Successfully processed 77 pages (191,975 characters) to istqb_ctal_ta_syllabus_content.txt, completing advanced testing knowledge base.
+**2024-12-19 | File Organization:** Moved extracted text files to additional context folder. **Action:** Reorganized files for better structure, cleaned up temporary scripts, created logical grouping of PDFs with their extracted content.
+**2024-12-19 | Best Practices Rule:** Added critical rule for best practices enforcement. **Action:** Established mandatory notification system when user requests conflict with established practices, requiring alternative recommendations.
+**2024-12-19 | Project Restructure:** Implemented comprehensive organizational improvements. **Action:** Created templates/ structure, reorganized Additional context with pdfs/extracted subdirs, moved .venv, created README.md, .gitignore, requirements.txt, updated cursor rules.
+**2024-12-19 | Local Documentation Rules:** Expanded rules for project-based local documentation structure. **Action:** Updated structure to organize by individual projects, enabling easy project review and sharing of test artifacts.
+**2024-12-19 | Test Run Demonstration:** Created project structure for AP-20577 and generated sample artifacts. **Action:** Demonstrated project-based organization with test case, bug report, and project notes, showing complete workflow for future projects.
+**2024-12-19 | Project Creation:** Created new project folder "Project_1" with complete structure. **Action:** Demonstrated system flexibility with different naming conventions, maintaining isolated project workspaces.
+**2024-12-19 | Project Focus:** Removed test Project_1 folder and focused on real AP-20577 project. **Action:** Cleaned workspace for actual form submission modal testing work.
+**2024-12-19 | Bug Documentation:** Documented responsive layout issue with comps button on smaller screens. **Action:** Created bug report and test case for lease list view responsive design testing, tracking UI positioning issues.
+**2024-12-19 | Jira Integration Rule:** Added requirement to output bug reports in formatted text for easy Jira copying. **Action:** Updated bug report writing rules to include copy-paste ready formatting for issue tracking systems.
+**2024-12-19 | APP Field Clarification:** Updated bug report template to use "Enterprise" as APP value. **Action:** Corrected APP field to refer to product application name rather than operating system, updated all existing bug reports.
+**2024-12-19 | Modal Text Bug:** Documented modal header text issue for single lease selection. **Action:** Created bug report and test case for modal text validation, tracking UI text accuracy issues in add to folder functionality.
+**2024-12-19 | Screenshot Evidence:** Updated modal text bug report with screenshot evidence. **Action:** Enhanced bug report with specific "Add 1 leases to Folder(s)" text details, providing concrete evidence for development team.

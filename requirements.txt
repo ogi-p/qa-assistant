@@ -1,0 +1,7 @@
+# PDF Processing
+PyPDF2==3.0.1
+
+# Future dependencies for QA tools
+# requests>=2.31.0  # For API testing
+# selenium>=4.0.0   # For web automation
+# pytest>=7.0.0     # For test framework
