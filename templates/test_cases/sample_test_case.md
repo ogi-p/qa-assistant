@@ -24,3 +24,13 @@ Verify that the address verification script correctly identifies existing addres
 - "Found" column shows `False` for addresses that don't exist
 - Log file contains detailed execution information
 - No error messages are displayed in terminal output
+
+## Traceability
+- **Requirements**: [REQ-001, REQ-002] (comma-separated requirement IDs)
+- **Related Bug Reports**: [BUG-001, BUG-002] (comma-separated bug report IDs)
+- **Component**: [Frontend/Backend/API/Database/Infrastructure]
+- **Feature Area**: [Folder Filter/User Management/Data Processing/etc.]
+- **Test Type**: [Functional/Regression/Performance/Security/Usability]
+- **Priority**: [High/Medium/Low] - Test execution priority
+- **Automation Status**: [Manual/Automated/Partially Automated]
+- **Coverage**: [Requirement/Code/Feature] - What this test covers

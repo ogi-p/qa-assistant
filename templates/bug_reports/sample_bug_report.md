@@ -24,3 +24,12 @@ Script crashes with IndexError: list index out of range, providing no helpful in
 - Error occurs in the main processing loop when trying to access `row[ADDRESS_COLUMN]`
 - No validation is performed on column indices before processing
 - Suggested fix: Add column count validation at script startup
+
+## Traceability
+- **Related Test Cases**: [TC-001, TC-002] (comma-separated test case IDs)
+- **Requirements**: [REQ-001, REQ-002] (comma-separated requirement IDs)
+- **Component**: [Frontend/Backend/API/Database/Infrastructure]
+- **Feature Area**: [Folder Filter/User Management/Data Processing/etc.]
+- **Jira Ticket**: [JIRA-123] (if applicable)
+- **Regression Impact**: [High/Medium/Low] - Likelihood of affecting other features
+- **Test Coverage Gap**: [Yes/No] - Whether this bug indicates missing test coverage

@@ -1,4 +1,4 @@
-# Project Description
+# QA Assistant Project - Cursor Rules
 
 The cursor-workshop project is a comprehensive QA assistant workspace with organized templates, ISTQB knowledge base, and structured tools for quality assurance professionals. The project follows a clean organizational structure with templates, reference materials, and documentation properly categorized.
 
@@ -27,7 +27,7 @@ templates/               # QA templates and examples
 
 local_docs/             # Local project documentation (git-ignored)
 ├── projects/           # Individual project folders
-│   ├── AP-20577_Add_form_submission_to_add_leases_modal/  # Example project
+│   ├── AP-20575_Create_Folder_Filter/  # Current active project
 │   │   ├── bug_reports/        # Project-specific bug reports
 │   │   ├── test_cases/         # Project-specific test cases
 │   │   ├── test_plans/         # Project test plans and strategies
@@ -64,6 +64,22 @@ Follow these rules at all times:
 - Save generated test cases to local_docs/projects/[ProjectName]/test_cases/ for project tracking
 - Use consistent naming convention: [Feature]_[Date].md within project folder
 - Create project folder structure automatically when new project is identified
+- **Human Readable Format:** Use descriptive, human-readable names for test cases instead of technical IDs when reporting progress
+- **Test Case Naming Convention:**
+  - **For Progress Reports:** Use descriptive names (e.g., "Feature Flag - Enabled" instead of "TC-001")
+  - **For Documentation:** Use both ID and description (e.g., "TC-001: Feature Flag - Enabled")
+  - **For Traceability:** Maintain technical IDs for matrix tracking
+- **Test Case Combination Strategy:**
+  - **Analyze for Combination Opportunities:** Always evaluate if related test cases can be combined for efficiency
+  - **Group by Functionality:** Combine tests that cover the same feature area or workflow
+  - **Maintain Coverage:** Ensure combined tests still provide 100% requirements coverage
+  - **Efficiency Focus:** Prioritize reducing test execution time while maintaining quality
+  - **Combination Examples:**
+    - Search functionality tests (real-time, case-insensitive, partial, no results, clear)
+    - Selection feedback tests (checkmark, single selection, display name)
+    - State management tests (persistence, clearing, multi-tab)
+    - URL parameter tests (addition, removal, validation)
+  - **Documentation:** Clearly indicate which original tests are combined in each comprehensive test case
 
 #### Bug Report Writing
 - Always include: Title, Environment, Steps to Reproduce, Expected Result, Actual Result, Severity/Priority
@@ -107,9 +123,22 @@ Follow these rules at all times:
 - **Project Isolation:** Each project has its own complete folder structure with all artifacts
 - **Easy Retrieval:** Projects can be easily reviewed, analyzed, and shared individually
 - **Automatic Structure:** Create project folder structure automatically when new project is identified
-- **Naming Convention:** Project folders use format: [ProjectID]_[BriefDescription] (e.g., AP-20577_Add_form_submission_to_add_leases_modal)
+- **Naming Convention:** Project folders use format: [ProjectID]_[BriefDescription] (e.g., AP-20575_Create_Folder_Filter)
 - **Complete History:** Maintain full testing history for each project separately
 
 #### Limitations
 - Do not generate over-complicated frameworks unless explicitly requested, and ask for confirmation before generation
 - Prioritize practicality over exhaustiveness
+
+## Current Status
+- Project structure established with templates for bug reports, test cases, and test files
+- Basic documentation in place (AI_README.md, README.md)
+- Active project information tracked in `.cursor/rules/project_status.mdc`
+
+## Development Guidelines
+- Follow ISTQB standards for QA processes
+- Maintain clean, well-documented code
+- Ensure proper error handling and logging
+- Test all integrations thoroughly before deployment
+- Create comprehensive test case checklists for all features
+- Organize test cases by functional areas with clear priorities

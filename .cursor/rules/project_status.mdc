@@ -1,0 +1,191 @@
+# Current Project Status & Active Work
+
+## Active Project: AP-20575 Create Folder Filter
+
+### Project Details
+- **Ticket:** AP-20575 [FE] Create a Folder filter
+- **Parent:** AP-20446 Folders - Phase 1
+- **Status:** QA Testing
+- **QA Assignee:** Ognjen Putniković
+- **Labels:** helios-backlog
+- **Created:** December 19, 2024
+
+### Completed Work
+- ✅ Comprehensive test case checklist created (65 test cases)
+- ✅ Test cases organized by functional areas:
+  - Feature Flag & Access Control (3 tests)
+  - UI Layout & Positioning (4 tests)
+  - Initial State & Dropdown Behavior (5 tests)
+  - Search Functionality (5 tests)
+  - Selection & Visual Feedback (5 tests)
+  - API Integration & Data Flow (6 tests)
+  - Map & List Integration (4 tests)
+  - URL Parameter Management (5 tests)
+  - Create New Folder Button (4 tests)
+  - Edge Cases & Error Handling (6 tests)
+  - State Management (3 tests)
+  - Visual & UX (5 tests)
+  - Cross-Browser & Device Testing (6 tests)
+  - Performance & Load Testing (4 tests)
+- ✅ **NEW:** Traceability system implemented
+  - Enhanced bug report template with traceability fields
+  - Enhanced test case template with traceability fields
+  - Created traceability matrix template
+  - Created project-specific traceability matrix for AP-20575
+  - Mapped 15 requirements to 28 frontend test cases
+- ✅ **NEW:** Comprehensive pre-test data generated
+  - Test data requirements document with 13 folder sets
+  - Test environment setup guide with complete configuration
+  - Test scenarios matrix with execution plan
+  - Database schema and API endpoint specifications
+  - Browser and device requirements documented
+
+### Test Case Location
+- `local_docs/projects/AP-20575_Create_Folder_Filter/test_cases/AP-20575_Test_Cases_Checklist.md`
+
+### Traceability Matrix Location
+- `local_docs/projects/AP-20575_Create_Folder_Filter/traceability/traceability_matrix.md`
+
+### Pre-Test Data Location
+- `local_docs/projects/AP-20575_Create_Folder_Filter/test_data/test_data_requirements.md`
+- `local_docs/projects/AP-20575_Create_Folder_Filter/test_data/test_environment_setup.md`
+- `local_docs/projects/AP-20575_Create_Folder_Filter/test_data/test_scenarios_matrix.md`
+
+### Current Session Progress
+- **Session Start:** [Current Date/Time]
+- **Tasks Completed:** 
+  - Test case checklist generation
+  - Traceability system implementation
+  - Template enhancements
+  - Project traceability matrix creation
+  - **NEW:** Comprehensive pre-test data generation
+  - **NEW:** Test environment setup documentation
+  - **NEW:** Test scenarios matrix creation
+  - **NEW:** Test case optimization and combination (21.4% efficiency gain)
+- **Test Execution Progress:**
+  - **Tests Executed:** 14/22 (63.6%) - Updated after test case combination
+  - **Tests Passed:** 14/14 (100% pass rate)
+  - **Critical Tests:** 10/6 completed (167% - All critical tests + 4 extra!)
+  - **Requirements Covered:** 11/15 (73.3%)
+  - **Next Test:** TC-SEARCH - Comprehensive search functionality (High Priority)
+- **Next Actions:** Execute remaining combined test cases, create bug reports as needed, update traceability matrix with results
+
+---
+
+## Next Session To-Do List
+
+### High Priority Tasks
+1. **Implement MCP from QA Core to this project**
+   - Integrate Model Context Protocol functionality
+   - Ensure proper data flow and communication
+
+2. **Jira Integration Validation**
+   - Check if Jira integration can handle labels properly
+   - Verify label creation, assignment, and management capabilities
+
+3. **Jira Ticket Creation Logic Review**
+   - Audit the logic for Jira ticket creation
+   - Ensure all required actions can be performed
+   - Test ticket creation workflow end-to-end
+
+4. **Jira Data Reading Capabilities Assessment**
+   - Evaluate how well the assistant can read all data in Jira
+   - Test integration depth: labels, linked tickets, PRs, etc.
+   - Assess data retrieval performance and accuracy
+
+### Traceability System Tasks
+5. **Execute Test Cases and Update Traceability**
+   - Execute all frontend test cases (TC-001 through TC-061)
+   - Create bug reports for any failures found
+   - Update traceability matrix with test execution results
+   - Track coverage gaps and missing test scenarios
+
+### Test Execution Tasks
+6. **Begin Test Execution**
+   - Set up test environment using provided documentation
+   - Populate test data according to specifications
+   - Execute critical test scenarios first (Chrome as primary browser)
+   - Execute optional cross-browser and device tests if time permits
+   - Document results and create bug reports
+
+---
+
+## Project History
+
+### Previous Projects
+- None yet (this is the first active project)
+
+### Completed Projects
+- None yet
+
+---
+
+## Session Notes
+
+### Current Session
+- **Date:** [Current Date]
+- **Focus:** AP-20575 Create Folder Filter test case generation, traceability implementation, and pre-test data generation
+- **Status:** Test cases created, traceability system implemented, pre-test data generated, ready for execution
+
+### Key Decisions Made
+- Created comprehensive test case checklist with 65 test cases
+- Organized test cases by functional areas for better tracking
+- Established project folder structure in local_docs
+- **NEW:** Implemented traceability system with enhanced templates
+- **NEW:** Created traceability matrix mapping requirements to test cases
+- **NEW:** Achieved 100% requirements coverage with test cases
+- **NEW:** Generated comprehensive pre-test data including:
+  - 13 folder test data sets with various scenarios
+  - Complete test environment setup documentation
+  - Test scenarios matrix with execution plan
+  - Database schema and API specifications
+
+### Blockers/Issues
+- None currently identified
+
+---
+
+## Quick Reference
+
+### Project Structure
+```
+local_docs/projects/AP-20575_Create_Folder_Filter/
+├── bug_reports/        # Project-specific bug reports
+├── test_cases/         # Project-specific test cases (✅ Created)
+├── test_plans/         # Project test plans and strategies
+├── test_results/       # Project test execution results
+├── traceability/       # Traceability matrix and coverage reports
+│   └── traceability_matrix.md (✅ Created)
+├── test_data/          # NEW: Pre-test data and requirements
+│   ├── test_data_requirements.md (✅ Created)
+│   ├── test_environment_setup.md (✅ Created)
+│   └── test_scenarios_matrix.md (✅ Created)
+└── project_notes/      # Project-specific notes and documentation
+```
+
+### Critical Test Scenarios (Must Pass)
+- Initial state verification
+- API integration verification
+- List and map integration
+- URL parameter management
+- Page refresh functionality
+
+### Traceability Coverage
+- **Requirements:** 15 identified and mapped
+- **Test Cases:** 22 frontend test cases created (17 required + 5 optional cross-browser/device tests) - Optimized
+- **Coverage:** 100% requirements coverage achieved
+- **Bug Reports:** 0 (expected for new feature development)
+- **Test Case Optimization:** Combined 8 groups of related tests for 21.4% efficiency gain
+
+### Pre-Test Data Summary
+- **Folder Test Sets:** 13 different scenarios
+- **Search Test Data:** Case sensitivity, partial matches, special characters
+- **Edge Cases:** Empty folders, single properties, large portfolios
+- **Environment Setup:** Complete configuration for Dev, Staging, Production
+- **Test Scenarios:** 47 frontend test scenarios mapped to specific data (42 required + 5 optional cross-browser/device tests)
+
+---
+
+*Last Updated:* [Current Date/Time]  
+*Status:* Active - Test Cases Generated, Traceability Implemented, Pre-Test Data Complete  
+*Next Action:* Execute test cases and update traceability matrix
