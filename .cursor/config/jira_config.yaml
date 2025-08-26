@@ -9,8 +9,8 @@ jira_server:
 
 # Authentication
 auth:
-  email: "ognjen.putnikovic@compstak.com"  # Replace with your Jira email
-  api_token: "ATATT3xFfGF0iakeK6gtZ6S4w3Suy1843-cFGTxi84YMbOYhQ5ZMzEDaO9LnaJHeyAmwpfPUWSF767w8-b-AgpwZM940ncP3xnDAJaoZQHXT5i_kWFXm4MERNg4DezGO4CEI03CgvRH9f43zwDF2MeyafpAuSNarKy2x6a_iZhREGhDtT33Gs7U=A697437C"     # Replace with your Jira API token
+  email: "your-email@domain.com"  # Replace with your Jira email
+  api_token: "your-api-token-here"     # Replace with your Jira API token
   # Note: For production, use environment variables instead of hardcoded values
 
 # Project Configuration
