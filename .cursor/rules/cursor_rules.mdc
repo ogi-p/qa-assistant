@@ -32,6 +32,8 @@ local_docs/             # Local project documentation (git-ignored)
 │   │   ├── test_cases/         # Project-specific test cases
 │   │   ├── test_plans/         # Project test plans and strategies
 │   │   ├── test_results/       # Project test execution results
+│   │   ├── traceability/       # Traceability matrix and coverage reports
+│   │   ├── test_data/          # Pre-test data and requirements
 │   │   └── project_notes/      # Project-specific notes and documentation
 │   └── [ProjectName]/          # Future project folders
 └── shared/             # Shared templates and reusable content
@@ -140,6 +142,12 @@ Follow these rules at all times:
 - **Naming Convention:** Project folders use format: [ProjectID]_[BriefDescription] (e.g., AP-20575_Create_Folder_Filter)
 - **Complete History:** Maintain full testing history for each project separately
 
+#### Security Best Practices
+- **Environment Variables:** Never commit .env files containing API tokens or credentials
+- **Template Files:** Always provide .env.template files for configuration examples
+- **Git Ignore:** Ensure sensitive files are properly excluded from version control
+- **Credential Management:** Use environment variables for all sensitive configuration
+
 #### Limitations
 - Do not generate over-complicated frameworks unless explicitly requested, and ask for confirmation before generation
 - Prioritize practicality over exhaustiveness
@@ -148,6 +156,14 @@ Follow these rules at all times:
 - Project structure established with templates for bug reports, test cases, and test files
 - Basic documentation in place (AI_README.md, README.md)
 - Active project information tracked in `.cursor/rules/project_status.mdc`
+- **CURRENT FOCUS:** AP-20575 Create Folder Filter project
+  - ✅ Comprehensive test case checklist created (65 test cases, optimized to 22 combined tests)
+  - ✅ Traceability system implemented with 100% requirements coverage
+  - ✅ Pre-test data generated (13 folder sets, environment setup, test scenarios matrix)
+  - ✅ Jira integration scripts developed (ticket reader, interactive reader)
+  - ✅ **SECURITY FIX:** .env file properly excluded from version control
+  - ✅ **DEPLOYMENT READY:** .env.template created for safe configuration
+  - 🔄 **NEXT:** Execute test cases and update traceability matrix with results
 
 ## Development Guidelines
 - Follow ISTQB standards for QA processes
