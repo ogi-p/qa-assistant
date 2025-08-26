@@ -1,6 +1,9 @@
 # Local documentation (project-specific files)
 local_docs/
 
+# Outdated and unused files
+Junkpile/
+
 # Python
 __pycache__/
 *.py[cod]

@@ -37,6 +37,20 @@ local_docs/             # Local project documentation (git-ignored)
 └── shared/             # Shared templates and reusable content
     ├── templates/      # Project-specific template variations
     └── references/     # Project-specific reference materials
+
+jira_scripts/           # Jira integration scripts
+├── jira_ticket_reader.py      # Comprehensive ticket reader
+├── interactive_jira_reader.py # Interactive ticket reader
+└── README.md                  # Script documentation
+
+Junkpile/               # Outdated and unused files (git-ignored)
+├── test_jira_connection.py    # Initial Jira connection test
+├── simple_jira_test.py        # Basic Jira connectivity test
+├── test_ticket_ap20641.py     # Specific ticket reading test
+├── find_qa_assignee.py        # QA assignee field discovery
+└── check_all_fields.py        # Custom field exploration
+
+logs/                   # Application logs (git-ignored)
 ```
 
 The goal is to create a practical, efficient tool that enhances QA productivity without over-engineering solutions.

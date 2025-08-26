@@ -2,7 +2,9 @@
 
 A specialized AI assistant designed to help QA professionals generate test cases, write bug reports, and follow QA best practices with ISTQB knowledge.
 
-## Quick Start
+## 🚀 Quick Start
+
+**New to the project?** Start with the [Quick Start Guide](QUICK_START_GUIDE.md) for easy setup instructions!
 
 ### **1. Create a New Project**
 ```bash
@@ -20,6 +22,18 @@ local_docs/projects/[ProjectID]/context/
 - **Test cases**: Describe a feature → Get structured test cases
 - **Bug reports**: Describe an issue → Get Jira-ready bug report
 - **QA guidance**: Ask for testing strategies and best practices
+
+### **4. Jira Integration**
+```bash
+# Read any Jira ticket
+python3 jira_scripts/jira_ticket_reader.py AP-XXXXX
+
+# Check your QA workload
+python3 jira_scripts/qa_workload_reader.py
+
+# See all your assignments
+python3 jira_scripts/my_assignments.py
+```
 
 ## How to Use This System
 

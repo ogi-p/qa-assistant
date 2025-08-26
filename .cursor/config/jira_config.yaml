@@ -1,0 +1,106 @@
+# Jira Integration Configuration
+# This file contains all Jira-related configuration settings
+
+# Jira Server Configuration
+jira_server:
+  url: "https://compstak.atlassian.net/"  # Replace with your Jira instance URL
+  timeout: 30  # Request timeout in seconds
+  max_retries: 3  # Maximum number of retry attempts
+
+# Authentication
+auth:
+  email: "ognjen.putnikovic@compstak.com"  # Replace with your Jira email
+  api_token: "ATATT3xFfGF0iakeK6gtZ6S4w3Suy1843-cFGTxi84YMbOYhQ5ZMzEDaO9LnaJHeyAmwpfPUWSF767w8-b-AgpwZM940ncP3xnDAJaoZQHXT5i_kWFXm4MERNg4DezGO4CEI03CgvRH9f43zwDF2MeyafpAuSNarKy2x6a_iZhREGhDtT33Gs7U=A697437C"     # Replace with your Jira API token
+  # Note: For production, use environment variables instead of hardcoded values
+
+# Project Configuration
+projects:
+  default_project: "AP"  # Default project key for ticket operations
+  supported_projects:
+    - "AP"  # Add your project keys here
+    - "HELIOS"
+    - "QA"
+
+# Ticket Configuration
+tickets:
+  default_issue_type: "Task"
+  supported_issue_types:
+    - "Bug"
+    - "Task"
+    - "Story"
+    - "Epic"
+  
+  # Status mapping for common workflows
+  status_mapping:
+    "To Do": ["Open", "New"]
+    "In Progress": ["In Progress", "Active"]
+    "Done": ["Done", "Closed", "Resolved"]
+    "Blocked": ["Blocked", "On Hold"]
+
+# Comment Templates
+comment_templates:
+  test_progress: |
+    ## Test Execution Update
+    
+    **Test Case:** {test_case}
+    **Status:** {status}
+    **Date:** {date}
+    
+    **Results:**
+    {results}
+    
+    **Next Steps:**
+    {next_steps}
+  
+  bug_report: |
+    ## Bug Report
+    
+    **Severity:** {severity}
+    **Environment:** {environment}
+    **Steps to Reproduce:**
+    {steps}
+    
+    **Expected Result:** {expected}
+    **Actual Result:** {actual}
+    
+    **Additional Notes:**
+    {notes}
+  
+  test_completion: |
+    ## Test Execution Complete
+    
+    **Total Tests:** {total}
+    **Passed:** {passed}
+    **Failed:** {failed}
+    **Skipped:** {skipped}
+    
+    **Coverage:** {coverage}%
+    
+    **Summary:** {summary}
+
+# Rate Limiting
+rate_limiting:
+  requests_per_minute: 60
+  burst_limit: 10
+  retry_delay: 1  # seconds
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "logs/jira_integration.log"
+  max_file_size: "10MB"
+  backup_count: 5
+
+# Error Handling
+error_handling:
+  max_retries: 3
+  retry_delay: 2  # seconds
+  exponential_backoff: true
+  log_errors: true
+  notify_on_failure: false
+
+# Security
+security:
+  validate_ssl: true
+  allow_insecure_connections: false
+  mask_sensitive_data: true
