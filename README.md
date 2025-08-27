@@ -158,6 +158,9 @@ Additional commands available:
 ## 🔧 Configuration
 
 Create a `.env` file in `01-jira-integration/config/.env`:
+
+1. **Copy the template**: `cp 01-jira-integration/config/env.template 01-jira-integration/config/.env`
+2. **Edit the file**: Replace the placeholder values with your actual credentials:
 ```env
 JIRA_MCP_LOGIN=your.email@compstak.com
 JIRA_MCP_TOKEN=your_api_token_here
