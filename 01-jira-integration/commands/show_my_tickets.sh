@@ -1,0 +1,136 @@
+#!/bin/bash
+
+# Show My Tickets - QA Engineer Command
+# Purpose: Show tickets assigned to the current QA Engineer
+# Usage: ./show_my_tickets.sh
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Find project root by looking for .env file (should be in project using qa_core)
+PROJECT_ROOT="$(cd "$SCRIPT_DIR" && while [[ "$PWD" != "/" && ! -f "01-jira-integration/config/.env" ]]; do cd ..; done && pwd)"
+ENV_FILE="$PROJECT_ROOT/01-jira-integration/config/.env"
+
+# Load .env file if it exists
+if [ -f "$ENV_FILE" ]; then
+    echo "Loading environment from $ENV_FILE"
+    # Load only specific variables we need to avoid JSON parsing issues
+    export JIRA_MCP_LOGIN=$(grep '^JIRA_MCP_LOGIN=' "$ENV_FILE" | cut -d'=' -f2-)
+    export JIRA_MCP_TOKEN=$(grep '^JIRA_MCP_TOKEN=' "$ENV_FILE" | cut -d'=' -f2-)
+else
+    echo "Warning: .env file not found at $ENV_FILE"
+    echo "Please create .env file with JIRA_MCP_LOGIN and JIRA_MCP_TOKEN"
+    exit 1
+fi
+
+# Check if required credentials are available
+if [ -z "$JIRA_MCP_LOGIN" ]; then
+    echo "Error: JIRA_MCP_LOGIN not available (check .env file)"
+    exit 1
+fi
+
+if [ -z "$JIRA_MCP_TOKEN" ]; then
+    echo "Error: JIRA_MCP_TOKEN not available (check .env file)"
+    exit 1
+fi
+
+# Configuration from environment variables
+JIRA_URL="https://compstak.atlassian.net"
+EMAIL="$JIRA_MCP_LOGIN"
+API_TOKEN="$JIRA_MCP_TOKEN"
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+echo -e "${BLUE}Show My Tickets - QA Engineer Dashboard${NC}"
+echo "================================================"
+
+# Get current user info
+echo -e "${YELLOW}Getting user information...${NC}"
+USER_INFO=$(curl -s -u "$EMAIL:$API_TOKEN" "$JIRA_URL/rest/api/3/myself")
+ACCOUNT_ID=$(echo $USER_INFO | grep -o '"accountId":"[^"]*"' | cut -d'"' -f4)
+DISPLAY_NAME=$(echo $USER_INFO | grep -o '"displayName":"[^"]*"' | cut -d'"' -f4)
+
+echo -e "${GREEN}Current User: $DISPLAY_NAME ($ACCOUNT_ID)${NC}"
+echo ""
+
+# Search for tickets where current user is QA Assignee
+echo -e "${YELLOW}Searching for tickets assigned to you as QA Assignee...${NC}"
+
+# JQL query to find tickets where current user is QA Assignee
+JQL_QUERY="cf[11207] = \"$ACCOUNT_ID\" AND project = AP ORDER BY updated DESC"
+# Use the exact encoding that works (same as PowerShell)
+ENCODED_JQL="cf%5B11207%5D%20%3D%20%22$ACCOUNT_ID%22%20AND%20project%20%3D%20AP%20ORDER%20BY%20updated%20DESC"
+SEARCH_URL="$JIRA_URL/rest/api/3/search?jql=$ENCODED_JQL&maxResults=50&fields=key,summary,status,priority,assignee,updated,customfield_11332"
+
+RESPONSE=$(curl -s -u "$EMAIL:$API_TOKEN" "$SEARCH_URL")
+
+# Check if response contains error
+if echo "$RESPONSE" | grep -q "errorMessages"; then
+    echo -e "${RED}Error: Failed to retrieve tickets${NC}"
+    echo "$RESPONSE"
+    exit 1
+fi
+
+# Parse and display tickets
+TOTAL=$(echo "$RESPONSE" | grep -o '"total":[0-9]*' | cut -d':' -f2)
+if [ -z "$TOTAL" ]; then
+    TOTAL=0
+fi
+echo -e "${GREEN}Found $TOTAL tickets assigned to you as QA Assignee${NC}"
+echo ""
+
+if [ "$TOTAL" -eq 0 ]; then
+    echo -e "${YELLOW}No tickets found assigned to you as QA Assignee.${NC}"
+    exit 0
+fi
+
+# Display tickets in a formatted table
+echo "==============================================================================================================="
+echo "Ticket Key  | Summary                                                     | Status      | Priority    | Last Updated        "
+echo "==============================================================================================================="
+
+# Extract ticket information using jq-like parsing (simplified)
+echo "$RESPONSE" | grep -o '"key":"[^"]*"' | cut -d'"' -f4 | while read -r key; do
+    # Get ticket details
+    TICKET_DATA=$(echo "$RESPONSE" | grep -A 50 "\"key\":\"$key\"" | head -20)
+    
+    # Extract fields
+    SUMMARY=$(echo "$TICKET_DATA" | grep -o '"summary":"[^"]*"' | cut -d'"' -f4)
+    STATUS=$(echo "$TICKET_DATA" | grep -o '"name":"[^"]*"' | head -1 | cut -d'"' -f4)
+    PRIORITY=$(echo "$TICKET_DATA" | grep -o '"name":"[^"]*"' | tail -1 | cut -d'"' -f4)
+    UPDATED=$(echo "$TICKET_DATA" | grep -o '"updated":"[^"]*"' | cut -d'"' -f4)
+    
+    # Format date
+    FORMATTED_DATE=$(date -d "$UPDATED" +"%Y-%m-%d %H:%M" 2>/dev/null || echo "$UPDATED")
+    
+    # Truncate summary if too long
+    SHORT_SUMMARY=$(echo "$SUMMARY" | cut -c1-50)
+    if [ ${#SUMMARY} -gt 50 ]; then
+        SHORT_SUMMARY="${SHORT_SUMMARY}..."
+    fi
+    
+    # Color coding based on status
+    STATUS_COLOR="$NC"
+    case "$STATUS" in
+        "Done"|"Closed")
+            STATUS_COLOR="$GREEN"
+            ;;
+        "In Progress")
+            STATUS_COLOR="$YELLOW"
+            ;;
+        "To Do"|"Open")
+            STATUS_COLOR="$RED"
+            ;;
+    esac
+    
+    # Display ticket information
+    printf "%-11s | %-50s | %-11s | %-11s | %s\n" "$key" "$SHORT_SUMMARY" "$STATUS" "$PRIORITY" "$FORMATTED_DATE"
+done
+
+echo "==============================================================================================================="
+echo ""
+echo -e "${GREEN}Total tickets: $TOTAL${NC}"
