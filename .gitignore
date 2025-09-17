@@ -1,79 +1,22 @@
-# Environment and Configuration Files
+﻿# Secrets and environment
 .env
-.env.local
-.env.*.local
+.env.*
 *.env
+01-jira-integration/config/.env
+!.env.example
+!01-jira-integration/config/env.template
 
-# JIRA API Tokens and Credentials
-jira_token.txt
-credentials.json
-secrets.json
-
-# IDE and Editor Files
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.log
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
 
-# OS Generated Files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Logs and Temporary Files
-*.log
-*.tmp
-*.temp
-logs/
-temp/
-
-# Node.js (if using any Node tools)
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Python (if using any Python scripts)
+# Python/Node caches
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+node_modules/
 
-# Backup Files
-*.bak
-*.backup
-*.old
-
-# Test Results and Reports (optional - uncomment if you want to exclude)
-# test-results/
-# coverage/
-# reports/
-
-# Personal Notes and Drafts
-drafts/
-notes/
-personal/
-
-# Project-specific folders (keep structure, exclude content)
-04-projects/*/
+# Cursor local state (keep rules, ignore transient)
+.cursor/*.log
+.cursor/cache/
