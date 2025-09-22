@@ -1,0 +1,1554 @@
+﻿
+The risk that the product does not meet stakeholder requirements is often a major driver in the selection
+of test approaches. There is sometimes confusion that the choice of test approaches is either based on
+risk or based on requirements. This is not a choice between alternatives - not meeting stakeholder
+requirements is typically one of the highest risks on any project - therefore choosing test approaches
+that help ensure requirements are met is a valid and vital part of a risk-based test strategy.
+
+NOTE The requirements that can be considered include (and are not limited to) test item requirements,
+project requirements, regulatory requirements, organizational requirements, contractual requirements.
+
+EXAMPLE A test strategy can be based on several test approaches and test practices. In a specific situation,
+test managers can decide to use unit testing, integration testing and system testing as levels of testing.
+Functional testing and load testing are the types of testing used. For functional testing, the test design techniques
+equivalence partitioning and boundary value analysis are chosen, along with the requirement to achieve a
+structural test coverage measure. Additionally, the test strategy specifies that the test practices scripted testing,
+exploratory testing and test automation are user in this situation. All these decisions are recorded in the test
+strategy which is intended to achieve the test goals identified by the test manager, and to address the perceived
+risks.
+
+20               © ISO/IEC 2022 - All rights reserved
+
+                 © IEEE 2022 - All rights reserved
+                                        ISO/IEC/IEEE 29119-1:2022(E)
+
+The selection of functional testing is often used to check the implementation of functional requirements,
+while non-functional types of testing (see Figure 2), such as performance and penetration testing are
+used to check that requirements in areas of performance and security are met.
+
+4.2.4 Test approaches
+
+4.2.4.1 General
+
+Test approaches are selected to be part of the test strategy based on their ability to treat perceived risks.
+A wide range of the most common test approaches are shown in Figure 2. Each test strategy includes
+at least some of these categories of test approaches. For instance, in a project test strategy, a selection
+of test levels and test types is made. If dynamic testing is identified as a necessary risk treatment (it
+cannot be selected for managing risks earlier in the life cycle when no executables are available), then
+test design techniques and (normally) corresponding test completion measures (defined in terms of
+test coverage measures) are included in the test strategy.
+
+4.2.4.2 Test levels
+
+The testing for a project is performed at various distinct stages of the life cycle, typically referred to
+as test levels. Each test level is associated with a type of test item (e.g. module, system), has specific
+objectives and is used to treat specific risks. For instance, integration testing has the objective of
+getting software parts to work together and is used to treat risks associated with interfaces between
+test items and attempts to help ensure that they communicate correctly.
+
+Test levels may be associated with static and dynamic testing and are closely related to development
+activities. For dynamic testing, each of the test levels typically requires a specific test environment.
+Common test levels, presented in the order they are typically performed and in order of the size of the
+test items from individual units or modules to complete systems:
+
+-- unit testing;
+
+-- integration testing;
+
+-- system testing;
+
+-- acceptance testing.
+
+More test levels are shown in Figure 2.
+
+4.2.4.3 Types of testing
+
+The different types of testing are shown in Figure 2 and described in detail in ISO/IEC/IEEE 29119-4.
+
+4.2.4.4 Test design techniques / measures
+
+Test design techniques for creating test cases and test coverage measures used to measure the
+completeness of using the test design techniques are shown in Figure 2 and described in detail in
+ISO/IEC/IEEE 29119-4.
+
+4.2.4.5 Test practices
+
+A variety of test practices can be implemented as part of a test strategy. A list of more common test
+practices is given in Figure 2, although others are possible.
+
+4.2.4.6 Static testing
+
+In test plans, use of static testing helps form an optimal test strategy. Static analysis and reviews can
+be applied prior to dynamic testing and can find defects before test execution becomes possible. Most
+
+© ISO/IEC 2022 - All rights reserved    21
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+software projects use reviews (see ISO/IEC 20246) as an approach to identifying issues early in the
+lifecycle.
+
+4.2.5 Testing in development and maintenance life cycles
+
+The test processes, documentation and techniques defined in the ISO/IEC/IEEE 29119 series are generic
+and apply equally to both development and maintenance of software, and to agile and tradition life
+cycles. It is possible to tailor use of these standards dependent on the situation, for instance, a lean level
+of documentation may be specified on agile projects.
+Testing in both development and maintenance should be based on the perceived risks. During
+maintenance, the risks will additionally need to take account of the changes made and the expected
+impact of those changes.
+
+               Figure 2 -- Example test approach choices
+
+22               © ISO/IEC 2022 - All rights reserved
+
+                                                          © IEEE 2022 - All rights reserved
+                                        ISO/IEC/IEEE 29119-1:2022(E)
+
+4.2.6 Domains and system characteristics
+
+The ISO/IEC/IEEE 29119 series is applicable to software from all domains, including, but not limited to,
+medical devices, commercial systems, defence systems, telecoms, and health. Systems from a specific
+domain share some similarities and these similarities can extend to the testing performed on them.
+However, given the wide range of systems from some domains (and that some systems cross two or
+more domains), it can be difficult to identify an appropriate set of testing approaches simply based on
+the domain.
+
+Systems from a specific domain will typically share a mix of system characteristics. For instance, a
+future avionics system can include the following characteristics - embedded, real-time, autonomous
+and AI. As system characteristics are less abstract than domains, it is easier to associate specific testing
+approaches with these characteristics.
+
+If the system characteristics associated with a given system are known, that suggests the types of
+testing that should be considered for inclusion in the test strategy (alongside those identified as a result
+of performing risk-based testing - see 4.2.2 for more on risk-based testing).
+
+Annex A provides more detail on various system characteristics and common associated test
+approaches.
+
+4.2.7 Test strategy contents
+
+The expected contents of the test strategy are shown below:
+
+-- test approach choices (see Figure 2):
+
+     -- test levels (as part of a project test plan);
+
+     -- test types (sometimes only one test type if this part of a specialized test plan focused on a single
+           system characteristic, such as usability);
+
+     -- selected test practices
+
+     -- selected static testing options
+
+     -- test design techniques (often selected based on team skills and familiarity, on the format of the
+           test basis and perceptions of expected defect types based on experience);
+
+-- test deliverables (may be driven by regulatory requirements, where the risk being treated is
+     partially not meeting mandated standards);
+
+-- test completion criteria (should match the test techniques, where selected, as these provide a means
+     of knowing when enough tests have been executed);
+
+-- entry and exit criteria (for each of the test activities; these are typically used to manage the test
+     process);
+
+-- degree of independence (see 4.1.11);
+
+-- metrics to be collected (often related to the test completion criteria, but may also be included to
+     support test process improvement);
+
+-- test data requirements (more realistic data may be used to treat risks associated with data validity);
+
+-- test environment requirements (often selected by balancing the risks of using unrepresentative test
+     environments with the costs of such environments, the required level of test automation should be
+     specified here);
+
+-- retesting and regression testing (levels need to be based on a knowledge of the risks associated
+     with developers making changes);
+
+© ISO/IEC 2022 - All rights reserved    23
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+-- suspension and resumption criteria (often defined to provide testers with an agreed set of conditions
+     that developers need to meet to make testing worthwhile);
+
+-- deviations from the organizational test practices (and perhaps the test policy).
+
+4.3 Test frameworks
+
+4.3.1 Test processes
+
+4.3.1.1 General
+
+Processes describe a set of interrelated or interacting activities which transform inputs into outputs. It
+is often useful to consider the testing activities separately from the development (and other) activities,
+and these activities are described by test processes. In ISO/IEC/IEEE 29119-2, test processes are
+defined at three levels - at the organizational level, management level and dynamic testing level. The
+test processes defined in this document exhibit generic characteristics that can be used in a wide range
+of situations. Organizations and projects may adopt these generic test processes and supplement them
+with additional activities, procedures, and practices, as necessary.
+
+4.3.1.2 Organizational level testing
+
+Testing at the organizational level is concerned with defining and maintaining policy and test practices
+that apply across the whole organization, rather than to specific projects. The rules and guidance
+defined in the test policy and one or more organizational test practices documents serve as the basis
+for all the software testing being performed within the organization. The existence of such rules and
+guidance provide constraints on projects that remove the need for duplicated decision-making (e.g. the
+documented organizational test practices may mandate that a specific test automation framework will
+be used on all projects) and encourage the reuse of skills and communication between projects. The test
+policy and organizational test practices documents are usually seen in more mature organizations and
+larger organizations running multiple projects. Testing can be, and is, performed without a test policy
+and documented organizational test practices in organizations of lower maturity, but this gives less
+coherence to the testing within the organization and can make the testing less effective and efficient.
+
+               Figure 3 -- The three levels of test processes
+
+4.3.1.3 Project-based testing
+
+When software is developed and maintained the stakeholders perform a set of interrelated
+processes typically defined by a life cycle model. The life cycle model acts as a common reference for
+communication and understanding for both the initial development and subsequent maintenance of the
+software.
+
+The test processes used on a project can be mandated by regulatory standards (e.g. for safety-related
+software), by organizational constraints (e.g. in the organizational test practices document) and by the
+specific needs of the project.
+
+24               © ISO/IEC 2022 - All rights reserved
+
+                 © IEEE 2022 - All rights reserved
+                                                                                ISO/IEC/IEEE 29119-1:2022(E)
+
+The ISO/IEC/IEEE 29119 series defines project-based test processes at two levels: to support the
+management of testing and to support dynamic testing. Static testing techniques, such as reviews and
+static analysis are defined in separate standards (e.g. ISO/IEC 20246). Thus, overall, three levels of test
+processes are defined, as shown in Figure 3.
+
+4.3.1.4 Test management processes
+The management of the testing to be performed is described by the test management processes. Initially
+a test plan is created in the test strategy and planning process based on an analysis of identified risks
+and project constraints, and taking account of the organizational test practices document, where one
+exists. The test plan includes the project-specific test strategy, the staffing, and scheduling of the testing.
+The test plan drives the testing, which is managed through the test monitoring and control process.
+When testing is complete, the test completion process includes activities to generates a test completion
+report, clean up the test environment, archive testware and perform lessons learned, among others.
+The test management processes are shown in Figure 4.
+
+                                       Figure 4 -- Test management processes
+
+4.3.1.5 Dynamic testing processes
+The dynamic testing processes describe how the test cases are developed, the test environment is
+set-up, the test cases are executed, and any issues reported. The interaction of the dynamic testing
+processes is shown in Figure 5. Note that this figure only shows a logical ordering for a single test (these
+processes will be run many times for the testing on a project) and some processes may run more often
+than others (e.g. environment set-up will normally occur less frequently than test execution). Also, in
+practice, some of these processes may run in parallel (e.g. test design may be done at the same time as
+test environment set-up).
+
+                                      Figure 5 -- Dynamic test processes
+
+© ISO/IEC 2022 - All rights reserved                                      25
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+4.3.1.6 Instantiation of test processes
+
+4.3.1.6.1 General
+
+The eight test processes defined in ISO/IEC/IEEE 29119-2 need to be applied based on the situation,
+which will vary between organizations, between projects and within projects.
+
+4.3.1.6.2 Organization level instantiation
+
+At the organizational level, there is a single organizational test process, which can be applied for the
+development and maintenance of any organization-level test specification. Therefore, this process will
+be instantiated for each separate organization-level test specification that is developed and maintained.
+Typically, this will mean that the process is instantiated twice; once for the test policy and once for the
+organizational test practices document (organizations may have multiple organizational test practices
+documents where projects within the organization are dissimilar enough to warrant separate rules and
+guidelines, in which case each separate organizational test practices document will require a separate
+instantiation of the organizational test process).
+
+4.3.1.6.3 Test management level instantiation
+
+At the test management level, the three management level test processes (test strategy and planning,
+test monitoring and control, and test completion) can be applied to manage different levels and types of
+testing. For instance, they can be used to manage project level testing, component testing, integration
+testing, system testing, acceptance testing, usability testing, performance testing and security testing.
+Thus, on a single large project, it may be necessary to instantiate the three management level test
+processes (they are nearly always instantiated as a complete set of three) several times. On a small
+project it may only be necessary to instantiate them once.
+
+For all projects, it is necessary to instantiate them to manage the project level testing. If it is decided
+that lower levels of testing (e.g. component testing, system testing) will be managed separately, then
+the test management processes will need to be instantiated for each of these levels that are managed
+separately. Similarly, if it is decided that a test type should be managed separately (e.g. usability testing,
+security testing) then, again, the test management processes will need to be instantiated for each
+of these types. One way of deciding if it is necessary to instantiate them is when it is decided that a
+separate test manager role is required for a specific test level or test type.
+
+               Figure 6 -- Hierarchy of instantiated test management processes
+
+26               © ISO/IEC 2022 - All rights reserved
+
+                 © IEEE 2022 - All rights reserved
+                                                                                ISO/IEC/IEEE 29119-1:2022(E)
+
+Where several test management processes are instantiated for a project, the processes instantiated for
+the project level testing are used to manage the other test management processes. It is also possible for
+lower level test processes to manage other test processes, so creating a hierarchy of test management,
+but this would only be applicable for very large projects. Such a hierarchy of test management processes
+is shown in Figure 6. All the test management processes in the hierarchy on the right-hand side are
+instantiated from the three base test management processes. The project test management processes
+would be the responsibility of the project test manager. Lower level sets of test management processes
+would typically be the responsibility of lower level test managers (e.g. a performance test manager
+would be responsible for the performance test management processes).
+
+4.3.1.6.4 Dynamic testing level instantiation
+
+At the dynamic testing level, the set of dynamic test processes will normally need to be instantiated
+many times. It is usual that they are separately instantiated for every different test level and test
+type (e.g. for component testing, integration testing, system testing, acceptance testing, performance
+testing, usability testing, security testing).
+
+In practice, it is also common for them to be separately instantiated for the testing of different parts of a
+system (e.g. they can be separately instantiated for the different modules for component testing, or for
+the acceptance testing of the functions associated with a specific stakeholder). In this way the design
+and execution of the tests associated with a particular function can be performed separately from
+the design and execution of other functions. Figure 7 shows the dynamic test processes instantiated
+separately for each test level and separately for the component testing of three different modules.
+
+Figure 7 -- Instantiation of multiple sets of dynamic test processes
+
+© ISO/IEC 2022 - All rights reserved                                  27
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+4.3.2 Test documentation
+
+4.3.2.1 General
+
+Test documentation is produced as a result of performing the test processes and is defined in detail in
+ISO/IEC/IEEE 29119-3. The destination of these outputs is either a stakeholder (e.g. test status reports
+to a project manager) or another process (e.g. a test plan to direct the performance of dynamic testing).
+As the test documentation comes from the processes, it can be categorized in terms of outputs at the
+three test process levels.
+
+4.3.2.2 Organization level documentation
+
+4.3.2.2.1 General
+
+The organizational test process develops and maintains organizational test specifications. These
+specifications typically take the form of either a test policy or an organizational test practices document.
+
+4.3.2.2.2 Test policy
+
+The test policy expresses the organization's expectations and approach to software testing in business
+terms. Although it would also be useful to anyone involved with testing, it is aimed at executives and
+senior managers. The approach described in the test policy (what the organization wants to achieve)
+guides the content of the organizational test practices document, which describes how the organization
+will achieve it.
+
+4.3.2.2.3 Organizational test practices
+
+The organizational test practices document is aligned with the test policy and expresses requirements
+and constraints on how the testing should be performed on all the projects run within the organization
+(unless they are too dissimilar in character, in which case multiple organizational test practices
+documents may be generated).
+
+4.3.2.3 Test management level documentation
+
+4.3.2.3.1 General
+
+Each of the three test management processes generates one main piece of test documentation. The
+test plan is generated as a result of test strategy and planning; test status reports are generated to
+document the progress of the testing effort by the test monitoring and control process; and the test
+completion report is generated to summarize the test effort from the test completion process.
+
+4.3.2.3.2 Test plan
+
+The test plan provides a detailed description of how the testing for the associated test management
+processes should be done. As test management processes can be instantiated to achieve a variety of
+goals (e.g. project test management, system test management, performance test management) the
+corresponding test plans also necessarily have a different focus depending on the reason for performing
+the testing. However, the types of information held in the test plan tend to remain the same whatever
+the form of testing that is being planned.
+
+The test plan is used by the test monitoring and control process as the basis for managing the testing,
+but it is also used by the dynamic testing processes as it specifies how the dynamic testing should
+be performed (e.g. it specifies the required test techniques, test completion criteria, who should be
+performing the testing and when). The test plan is also used to specify how static testing (e.g. reviews
+and static analysis) should be performed. The test plan may be updated by the test monitoring and
+control process, for instance, due to changing requirements (e.g. test completion date moved forward)
+or when the specified testing cannot be done by the testers.
+
+28                              © ISO/IEC 2022 - All rights reserved
+
+                                © IEEE 2022 - All rights reserved
+                                        ISO/IEC/IEEE 29119-1:2022(E)
+
+4.3.2.3.3 Test status report
+
+Test status reports are generated by the test monitoring and control process to provide information
+on the current progress of the testing against the test plan. These reports may be used by the project
+manager to gauge progress or, if the test management is being performed at a lower level, they may
+be used to inform the project test manager of progress at this lower test level. test status reports are
+normally produced on a regular basis (as specified in the test plan), although the frequency of reporting
+may increase towards the end of the testing.
+
+4.3.2.3.4 Test completion report
+
+The test completion report summarizes the testing that was performed during the testing, details the
+testware that was archived and the state of the test environment, and describes the lessons learned
+from performing the testing. Where the test completion report is for a higher level of testing, it should
+also incorporate details of the testing performed at lower test levels (e.g. if it is a project test completion
+report and there was a separate system test plan then it should include details of the system testing,
+which should be available in the system test completion report). One test completion report is normally
+generated for the testing associated with each corresponding test plan.
+
+4.3.2.4 Dynamic testing level documentation
+
+4.3.2.4.1 General
+
+The amount of test documentation produced by the dynamic testing processes can vary greatly as
+the requirements for documenting test case design, test environments and test results can be quite
+different for different forms of testing. The test documentation requirements should be specified in the
+test plan and, depending on the level of test automation, some of the documentation may be held in a
+test management tool.
+
+4.3.2.4.2 Test specification
+
+Test specifications should provide sufficient detail to determine how the test cases in the test
+procedures were derived from the test basis and that they achieve the required level of test coverage.
+Test specifications may take the form of a test procedure (supporting manual test execution) or an
+automated test script (supporting automated test execution). Traceability from the test cases back
+to the test basis is required to confirm coverage and to support the selection of tests to re-run when
+changes are made.
+
+4.3.2.4.3 Test environment requirements and test data requirements
+
+Where these are not already included in the test plan, any requirements for the test environment and
+test data are specified.
+
+4.3.2.4.4 Test environment report and test data readiness report
+
+The status of the test environment (e.g. availability) and test data are reported to the relevant
+stakeholders.
+
+4.3.2.4.5 Test execution log
+
+The execution of tests, including actual results, are recorded in the test logs.
+
+4.3.2.4.6 Test incident report
+
+Where necessary, incident reports (also known as defect reports) are generated to allow, when
+considered cost-effective, defects to be removed.
+
+© ISO/IEC 2022 - All rights reserved    29
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+4.3.3 Documentation requirements
+
+ISO/IEC/IEEE 29119-3 is extremely flexible in its documentation requirements. ISO/IEC/IEEE 29119-3
+specifies the required information to be recorded, but it does not require specific naming or terminology
+to be used; nor does it require specific documents to be created (the information can be stored in
+multiple documents or combined into a single document). Documents do not have to paper-based, and
+the information can be held electronically or within test automation tools.
+
+4.3.4 Configuration management and testing
+
+Configuration management (defined in ISO 10007) is a set of activities used by the test processes at
+all three levels so that configuration items (e.g. test procedures, test scripts) are uniquely identified,
+changes to these items are recorded and the current status of configuration items can be reported.
+Configuration items of particular interest to testers are the inputs and outputs of the test processes
+and include all the test documentation mentioned in the previous subsections, along with items that
+are tested (e.g. systems and their components) and the corresponding test basis (e.g. requirements
+specification).
+
+Where possible, for the purpose of being able to recreate a problem so it can be analysed further, the
+configuration management system should support the ability to repeat a test at any point in the future
+under the same conditions as before. It is acceptable practice to exclude certain types of testing - for
+example, unit testing - from this repeatability requirement as long as the exception is documented.
+
+4.3.5 Tool support
+
+Tool support (usually referred to as test tools) is available for many of the tasks and activities described
+in the test management and dynamic testing processes defined in ISO/IEC/IEEE 29119-2, as well as
+aspects of the testing techniques described in ISO/IEC/IEEE 29119-4. The following list provides
+examples of some of the areas covered by test tools:
+
+-- test case management;
+
+-- test monitoring and control;
+
+-- test data generation;
+
+-- static analysis;
+
+-- test case generation;
+
+-- test case execution;
+
+-- test environment implementation and maintenance.
+
+There are a wide variety of test automation tools available. They can be developed in-house, obtained
+commercially, or obtained from the open-source community.
+
+4.3.6 Process improvement and testing
+
+Process improvement includes the identification and implementation of changes to an organization's
+processes so that they meet the organization's business goals more effectively and efficiently.
+
+The test processes and process improvement interact in two ways:
+
+a) the test processes deliver information on which process improvement changes can be based;
+
+b) the test processes can themselves be subject to process improvement.
+
+When testing delivers information to process improvement it typically comes from the lessons learned
+activity, which is part of the test completion process.
+
+30                              © ISO/IEC 2022 - All rights reserved
+
+                                © IEEE 2022 - All rights reserved
+                                                                                ISO/IEC/IEEE 29119-1:2022(E)
+
+When test processes are improved, this can be part of a wider initiative covering all development, test
+and support processes or a more localized initiative targeted at the test processes.
+
+4.3.7 Test metrics
+
+To effectively control the test processes, metrics can be used to monitor them. Metrics should be
+selected with care, so that the information that is needed to control the processes is collected, and no
+measures are collected unnecessarily.
+
+Some examples of metrics that can be used in testing are:
+
+-- residual risk: number of risks identified compared to number of risks treated;
+
+-- cumulative defects: number of defects opened compared to number of defects closed;
+
+-- test coverage: number of requirements covered by executed tests;
+
+-- defect detection percentage: number of defects found in testing compared to number of defects
+     found overall.
+
+4.4 Test design and execution
+
+4.4.1 Test model
+
+The test model is used as the basis of test design - it models the required behaviour of the test item and
+is used to generate test cases that cover the model to the required level of coverage. Figure 8 shows the
+relationships between the major test artefacts involved in test design, showing the test model as a key
+part.
+
+The notation used for the test model is selected by considering the required test coverage; this indicates
+the form of the test coverage items - and these are incorporated into the test model. For instance,
+imagine the required test coverage is to exercise all valid transitions between states that the test item
+can be in. The test coverage items are these valid transitions and so a test model needs to be chosen
+that clearly shows these transitions. At this point the tester chooses between the different notations
+available for state models (e.g. they can choose a state transition diagram or a state table).
+
+© ISO/IEC 2022 - All rights reserved    31
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+                                         Figure 8 -- Test model in perspective
+
+As shown in Figure 8, the required test coverage is specified in the test strategy as one of the test
+completion criteria. The required behaviour is defined in the test basis and subsequently modelled in
+the test model. The test model is used to identify explicit test coverage items, which are used to generate
+test cases to cover them. Test procedures (test scripts) contain sequences of test cases, and several test
+procedures comprise a test suite.
+
+The use of the test model to generate test cases (and, subsequently, test procedures) is defined in
+ISO/IEC/IEEE 29119-2. The documentation of the test model (in the test model specification) is
+defined in ISO/IEC/IEEE 29119-3. The use of the test model by test design techniques is defined in
+ISO/IEC/IEEE 29119-4.
+
+4.4.2 Model-based testing
+
+Model-based testing (MBT) uses models to generate test cases systematically and automatically. For
+MBT models are formal or semi-formal representations of the required behaviour of an item under
+test. Models can be developed for a complete software system or parts of a system. Use of MBT allows
+testers to design and implement tests at various levels of abstraction. MBT languages and notation
+can be formally defined syntactically and, in some cases, semantically. By using MBT tool support
+environments, test cases can quickly be generated from the model and automatically executed. Thus,
+MBT can support improved testing beyond that supported by natural languages and manual execution.
+
+32                              © ISO/IEC 2022 - All rights reserved
+
+                                © IEEE 2022 - All rights reserved
+                                                                                ISO/IEC/IEEE 29119-1:2022(E)
+
+4.4.3 Scripted and exploratory testing
+
+4.4.3.1 Overview
+
+Test design and execution can be conducted in a number of ways, depending on the needs of each
+project:
+
+-- scripted, which can be:
+
+     -- manual;
+
+     -- automated;
+
+-- exploratory.
+
+In practice, a combination is typically used, as the scripted testing helps achieve required test coverage
+levels, while the exploratory testing allows for creativity and the rapid execution of tests, when needed.
+
+4.4.3.2 Scripted testing
+
+In scripted testing, test cases are recorded (e.g. documented in a test management tool or in a
+spreadsheet) and can then be executed manually or executed automatically using an automated
+testing tool. The level of detail required within each test case (such as the granularity of test steps
+and expected results) often depends on the documentation requirements of the project, which are
+typically decided during test planning (see 4.2). The level of detail also depends on whether the testing
+is automated (which typically requires more detail). For manual tests, the level of detail also depends
+on the knowledge, experience, and capability of the test executor (including their system and testing
+domain knowledge).
+
+4.4.3.3 Exploratory testing
+
+In exploratory testing[16], tests are designed and executed on the fly, as the tester interacts with and
+learns about the test item. Session sheets are often used to structure exploratory testing sessions (e.g.
+by setting a focus and time limits on each test session). These same session sheets are also used to
+capture information about what was tested, and any anomalous behaviour observed. Exploratory tests
+are often not wholly unscripted, as high-level test scenarios (sometimes called "test ideas") are often
+documented in the session sheets to provide a focus for the exploratory testing session.
+
+4.4.4 Test design techniques
+
+In both scripted and exploratory testing, tests are often created by using test design techniques, such
+as those defined in ISO/IEC/IEEE 29119-4. In scripted testing, tests are typically designed in systematic
+and methodical ways, with one technique being used at a time, such as is demonstrated within the
+examples of ISO/IEC/IEEE 29119-4:2021, Annexes B and C. During exploratory testing, the same test
+design techniques are typically used, but their application is usually much more informal, with a variety
+of techniques being interleaved, with less test documentation.
+
+The aim of applying test design techniques during exploratory testing is often to target specific types
+of defects, "cover" specific aspects of requirements, specifications, or source code. The main difference
+with how test techniques are used during scripted testing is that various techniques are used to
+generate test cases to test a specific aspect of the test item and so a technique may be used to generate
+a single test cases before another technique is subsequently used for the next test case, which explores
+a different aspect of the test item.
+
+A variety of test design techniques is typically required to suitably cover any system, regardless of
+whether the testing is scripted or exploratory.
+
+© ISO/IEC 2022 - All rights reserved    33
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+4.4.5 Experience-based testing
+
+4.4.5.1 General
+
+Experience-based testing is based on:
+
+-- previous testing experience;
+
+-- knowledge of particular software and systems;
+
+-- domain knowledge;
+
+-- metrics from previous projects (within the organization and from industry).
+
+Experience-based test practices typically do not rely on large amounts of documentation (e.g. test
+procedures) to execute testing. On a continuum from scripted to unscripted testing, these experience-
+based test practices are primarily unscripted. Using such practices may mean that only tailored
+conformance to ISO/IEC/IEEE 29119-2 can be achieved.
+
+ISO/IEC/IEEE 29119-4 describes the experience-based test design technique of error guessing. Other
+experience-based test practices include (but are not limited to) exploratory testing (see 4.4.3.3), tours,
+attacks, and checklist-based testing.
+
+4.4.5.2 Tours
+
+Tours provide generalized testing advice that guides testers through the paths of an application like a
+tour guide leads a tourist through the landmarks of a big city. Tours are not aimed at providing guidance
+on which test input values to select, rather they are aimed at providing higher level guidance for test
+design. For instance, a tour can suggest which areas of an application should be the focus of a two-hour
+exploratory testing session.
+
+An example of a tour used for exploratory testing would be the `Landmark tour'. In this tour, testers
+choose key features, decide on a sequence to visit them, and then explore the application going from
+landmark to landmark until all of them have been visited.
+
+4.4.5.3 Attacks
+
+Attacks are identified based on their potential for exploiting a specific fault model. A fault model is
+a way of thinking about how and why software fails[15]. Fault models can be behaviour-based, which
+allows testers to look for effective tests (attacks) that will identify failures in software. Specific fault
+models can be used, for instance, to design attacks that may result in security compromises (e.g. for
+security testing), if a specialist type of testing is performed.
+
+An example of a security attack would be to block access to software libraries. This attack is based on
+the fault model that an application will behave insecurely if software libraries that it relies on fail to
+load - and developers assume that calls to these libraries will work each time and make no provision
+for when this does not happen.
+
+4.4.5.4 Checklist-based testing
+
+Checklist-based testing is based on the tester generating tests based on a list of pre-determined items.
+The items on the checklist can be based on personal experience, commonly found defects, and perceived
+risks, among others. Checklist-based testing is often focused on a particular quality characteristic (e.g.
+a user interface checklist). Checklists should be reviewed and updated regularly so that that they do not
+become stale and that they continue to target the most important defects. Checklists can be focused on
+different levels of detail and the tests generated from checklists may be scripted or unscripted.
+
+Checklists can come from various sources; for instance, they may be specific to an individual tester, an
+organization, may be shared on the web or may form part of a regulatory standard.
+
+34                              © ISO/IEC 2022 - All rights reserved
+
+                                © IEEE 2022 - All rights reserved
+                                        ISO/IEC/IEEE 29119-1:2022(E)
+
+4.4.6 Retesting and regression testing
+
+When a developer fixes a defect, tests are run to check that the fix was made successfully; this is known
+as retesting or confirmation testing. In most cases, the original test cases associated with the fixed code
+are used for retesting, but they are sometimes supplemented by new test cases that provide improved
+coverage.
+
+When a developer makes changes to existing software (e.g. to fix a defect, add functionality, change non-
+functional characteristics), tests are run to check that the original behaviour of the software, which is
+expected to be unchanged by the modification, has not been adversely affected by the changes; this is
+known as regression testing.
+
+4.4.7 Manual and automated testing
+
+Test cases can either be run manually by a human test executor, or they can be executed by a test
+automation tool.
+
+The decision to conduct manual or automated testing depends on various factors, including the
+following.
+
+-- The number of times a test case is likely to be re-executed. A common heuristic is that if a set of
+     test cases is going to be executed 5 or more times (e.g. during multiple cycles of regression testing),
+     then it is typically cost-effective to automate the tests. The number of times a test case is going to
+     be rerun can depend on the life cycle methodology in use (e.g. traditional life cycles can require
+     infrequent regression testing, whereas agile projects typically require regression testing at least
+     every sprint, while projects utilizing continuous integration (CI) can rerun a test case every build
+     or once per day). Thus, within agile or CI methodologies, regression test cases are highly likely to be
+     re-run more than 5 times.
+
+-- The capability of the testers on the project, as most test automation tools typically require testers
+     with some programming capabilities.
+
+-- The budget and time available for acquiring and piloting test automation tools.
+
+-- The budget available for hiring and/or training testers in test automation tools.
+
+There are three common approaches to the automation of test design and execution. These are:
+
+-- capture-replay;
+
+-- data-driven;
+
+-- keyword-driven (for a detailed description, see ISO/IEC/IEEE 29119-5).
+
+4.4.8 Continuous testing
+
+In continuous testing, test execution is started via an automated process that can occur on-demand,
+such as whenever code is checked into a central repository, on a nightly basis, or whenever builds are
+deployed to test or production environments. Continuous testing typically occurs in the context of
+continuous integration (CI) and continuous delivery (CD).
+
+The application of continuous testing and continuous integration allow early testing.
+
+4.4.9 Back-to-back testing
+
+In back-to-back testing, an alternative version of the system (e.g. already existing, developed by a
+different team, implemented using a different programming language, an executable design model) is
+used as a comparison system to generate expected results for comparison from the same test inputs.
+
+As such, back-to-back testing is not a test case generation technique as test inputs are not generated.
+Only the expected results are generated automatically by the functionally equivalent system. When
+
+© ISO/IEC 2022 - All rights reserved    35
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+used in partnership with tools for generating test inputs (random or otherwise) it becomes a powerful
+way to perform high-volume automated testing.
+
+4.4.10 A/B testing
+
+A/B testing is a statistical testing approach that allows testers to determine which of two systems
+performs better - it is sometimes known as split-run testing. It is often used for digital marketing (e.g.
+finding the email that gets the best response) in client-facing situations. As an example, A/B testing is
+often used to optimize user interface design. For instance, the user interface designer hypothesizes that
+by changing the colour of the `buy' button from the current red to blue, that sales will increase. A new
+variant of the interface is created with a blue button and the two interfaces are assigned to different
+users. The sales rates for the two variants are compared and, given a statistically significant number
+of uses, it is possible to determine if the hypothesis was correct. This form of A/B testing requires
+a statistically significant number of uses and can be time-consuming, although tools can be used to
+support it.
+
+A/B testing is not a test case generation technique as test inputs are not generated. A/B testing is a
+means of solving the test oracle problem by using the existing system as a partial oracle.
+
+4.4.11 Mathematical-based and fuzz testing
+
+Mathematical-based test practices can be used to plan, design, select data and set up input conditions
+when the test item's required behaviour, input space or output space can be described in sufficient
+detail, for instance using a formal language. Formal specification languages can be used to support
+model-based testing, and formal analysis of source code can be used to identify potential risks and
+inform the test strategy.
+
+Mathematics form the basis for some of the test case design techniques described in
+ISO/IEC/IEEE 29119-4, such as random test case selection, and they can also be used to support
+combinatorial testing approaches. Similarly, fuzz testing uses a tool to generate high volumes of test
+input data, which is then used to test a program using a simple test oracle (e.g. checking that the
+program does not crash). Fuzz testing can be surprisingly effective at finding defects, but, as with
+random testing, test coverage is difficult to measure. When measures of confidence are needed from
+fuzz testing a statistical approach can be used to determine the significance of the test results based on
+the number of tests run.
+
+Due to the large numbers of inputs that can typically be generated using mathematical practices,
+automated tools are usually needed.
+
+4.4.12 Test environments
+
+Test environment requirements should be considered as part of test planning, to allow all necessary
+components to be acquired, set up, configured, and validated prior to test execution, and cleaned up
+after execution. Test environment requirements can include:
+
+-- software - such as operating systems, programs, and other apps;
+
+-- services - such as virtual or cloud services;
+
+-- hardware - such as servers and end-user desktop computers, laptops, and mobile devices;
+
+-- network - such as switches, routers, network connections at specific speeds;
+
+-- interfaces - such as to internal, virtual, or third-party systems;
+
+-- peripherals - such as printers, scanners, and card scanners;
+
+-- data - including data stored in databases;
+
+-- test tools - such as test management and execution tools;
+
+36                              © ISO/IEC 2022 - All rights reserved
+
+                                © IEEE 2022 - All rights reserved
+                                                                                ISO/IEC/IEEE 29119-1:2022(E)
+
+-- availability - such as hours per day and times to set-up.
+
+Test environment requirements should be recorded so that they can be communicated and understood.
+If a separate team is setting up a test environment, then that team should produce a test environment
+readiness report, to confirm that the environment has been set up, configured, and validated as
+required. With a separate team, there should be a service level agreement (SLA) specifying when and
+how problems with the environment will be addressed.
+
+4.4.13 Test data management
+
+Test data setup and clean-up requirements should be identified to help ensure the system is in a state
+that enables each test case to be executed and re-executed. For instance, when testing a credit rating
+system, a customer's historical banking data are required to determine the customer's credit score.
+
+Private data may need to be anonymized or sanitized to help meet data privacy regulations.
+
+Test data setup, clean-up and sanitization may be carried out manually or automated using scripts. Test
+data and automated scripts should be versioned and placed under source control.
+
+4.5 Project management and testing
+
+Project management refers to the support processes that are used to plan and control the course of
+a project including the management of the testing within the overall project. Regardless of who has
+responsibility for the individual processes, the project management and test management processes
+are closely related, as shown in Figure 9.
+
+Figure 9 -- Relationship between the overall project and the testing
+
+The estimation, risk analysis, and scheduling of the test activities should be consolidated with the
+overall project planning. The project plan, which is an information item from the project management
+process, is therefore an input to the test management process.
+
+During the course of the testing, measurements collected from detailed test activities are analysed by
+the test manager and communicated to the project manager for analysis in the project context. This
+may result in changes to the project plan, updated project plans and appropriate directives, which will
+need to be issued to the testers to help ensure that the testing is aligned with the project plan.
+
+4.6 Communication and reporting
+
+Communication by testers should provide stakeholders with relevant and timely information that
+is appropriate for the audience. This information may provide developers with details on needed
+modifications, alert project managers about progress against schedule and budget, or inform external
+parties on the conclusion of testing.
+
+Test plans will specify the nature and timing of reporting on test tasks. Tasks with an extended duration
+may require periodic status reporting. Status reports can indicate the need to adjust previously planned
+priorities, schedules, or resource allocations. Completion reports describe the performed testing and
+the outcome.
+
+© ISO/IEC 2022 - All rights reserved                                  37
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+4.7 Defects and incident management
+
+Failed tests, as indications of possible defects, need to be investigated systematically to determine if
+the defects are in the system under test or in the tests themselves (which may indicate a flawed or
+missing requirement). A test result that differs from the predicted behaviour is regarded as an incident
+to be recorded, investigated, and possibly resolved. Defects can be found by dynamic and static testing
+as well as other activities such as analysis or verification and validation.
+
+38               © ISO/IEC 2022 - All rights reserved
+
+                 © IEEE 2022 - All rights reserved
+                                                                                ISO/IEC/IEEE 29119-1:2022(E)
+
+                                        Annex A
+                                     (informative)
+
+              System characteristics and testing - examples
+
+A.1 Overview
+
+Each system can be categorized by a set of characteristics that describe certain aspects of the system. If
+these system characteristics are chosen carefully, then specific test approaches can be associated with
+these characteristics that are known to be appropriate in many (but not all) situations.
+This annex briefly describes a number of system characteristics (many more can be identified) and
+the associated test approaches. If a tester can identify which of the system characteristics apply to
+the system they are testing, then they should consider whether the specialized testing listed for the
+characteristic is appropriate for inclusion in their test strategy. This should supplement the input of
+risk-based testing (see 4.2) and should in no way be considered a replacement for it.
+Where a system characteristic has `associated characteristics' identified (e.g. real-time is an associated
+characteristic of closed loop), then the testing applicable to the associated characteristic is also likely to
+be applicable (e.g. the testing suggested for real-time systems should also be applicable to closed loop
+systems).
+
+A.2 Artificial intelligence (AI)
+
+A.2.1 Description
+
+Artificial intelligence comes in a variety of forms (e.g. classification, optimization, planning) and is used
+to solve a range of problems (e.g. search engines, image recognition, speech recognition, understanding
+and synthesis). Whichever form an AI-based system takes, it is normally complex and difficult to
+understand. They are also typically probabilistic in nature, meaning that most AI-based systems are
+non-deterministic.
+
+A.2.2 Associated characteristics
+
+Typical associated characteristics are scientific/technical (see A.14).
+
+A.2.3 Specialized testing
+
+Back-to-back and metamorphic testing both address the problem of testing non-deterministic systems.
+The unique computing architectures of AI-based systems (e.g. massively concurrent neural networks)
+means that if structure-based testing is used then specific structural coverage criteria will need to be
+used (e.g. neuron coverage).
+
+The different architectures and development process associated with AI mean that specialist skills are
+needed by testers (or data scientists in the testing role).
+For more details on the testing of AI-based systems refer to ISO/IEC TR 29119-11.
+
+© ISO/IEC 2022 - All rights reserved    39
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+A.3 Autonomous
+
+A.3.1 Description
+
+Autonomous systems address a wide range of application areas and can vary widely in terms of their
+implementation technology. An autonomous system is defined as a system that works for sustained
+periods independent of human control. This definition means that automatic systems and automated
+systems are also forms of autonomous system. Autonomous systems can be distinguished by their
+varying levels of flexibility, as shown in Table A.1.
+
+               Table A.1 -- Levels of flexibility in autonomous systems
+
+               Flexibility                                            Example systems
+
+         (later levels may include previous levels)   Simple thermostat
+
+Fixed rules                                           Anti-lock brake system (ABS)
+                                                      Traffic jam system, e.g. SAE level 3
+Fixed rules with feedback                             Production line robot (using ML-based image process-
+                                                      ing)
+Fixed neural network that does not change its behav-
+iour based on its experience
+
+System changes its behaviour based on its past experi- Self-learning thermostat
+
+ences                                                 Financial trading system
+
+                                                      Smart building
+
+A.3.2 Associated characteristics
+
+Typical associated characteristics are real-time (see A.11).
+
+A.3.3 Specialized testing
+
+One approach to testing for autonomy is to attempt to force the system out of its autonomous behaviour
+and request intervention in unspecified circumstances (a form of negative testing). Negative testing
+can also be used to attempt to `fool' the system into thinking it is in control when it should request
+intervention (e.g. by creating test scenarios at the boundary of its operational envelope - suggesting the
+application of boundary value concepts to scenario testing).
+
+A.4 Bespoke
+
+A.4.1 Description
+Bespoke systems are built for a specific customer and purpose (i.e. they are not COTS systems - see
+A.6).
+A.4.2 Associated characteristics
+There are no associated characteristics.
+
+A.4.3 Specialized testing
+Acceptance testing is performed for a specific customer (and set of users).
+
+40                                                                    © ISO/IEC 2022 - All rights reserved
+
+                                                                                 © IEEE 2022 - All rights reserved
+                                                                                ISO/IEC/IEEE 29119-1:2022(E)
+
+A.5 Closed loop
+
+A.5.1 Description
+A system that tries to achieve a desired state while also monitoring the current state it is acting upon
+in the form of feedback (e.g. a heating controller will control heating to maintain a desired input
+temperature while also monitoring the current temperature to help it achieve its goal).
+
+A.5.2 Associated characteristics
+Typical associated characteristics are real-time (see A.11). Technical/scientific characteristics are also
+often associated with closed loop systems (see A.14).
+
+A.5.3 Specialized testing
+When testing a closed loop system, the tester should consider how earlier test inputs create feedback,
+which acts as an input to the system under test. This is unlike testing an open loop system, where all
+inputs are directly controlled by the tester.
+Until a closed loop system is ready for testing in its complete operational environment, the testing of
+a closed loop system is special as plant and environment models are needed to simulate the feedback
+to the system based on its outputs. The plant model simulates the results of the actions of the control
+system on the controlled plant (e.g. engine, gearbox, brakes) and the environment model simulates the
+results of the actions of the control system on the wider environment.
+
+A.6 Commercial-off-the-shelf (COTS)
+
+A.6.1 Description
+Systems that are designed to be sold to many customers (e.g. shrink-wrapped software rather than
+bespoke).
+
+A.6.2 Associated characteristics
+There are no associated characteristics.
+
+A.6.3 Specialized testing
+Understanding the operational environments of unknown buyers can be difficult - hence alpha and
+beta testing are often used.
+
+A.7 Embedded
+
+A.7.1 Description
+A software system that is physically embedded in, and typically providing the control part of a larger
+system, such as a robot arm controller, a fitness tracker, or an avionics system on an aircraft. Embedded
+systems are developed for a specific purpose and they are often optimized for this purpose using special
+ruggedized processors and hardware with lower power consumption than general-purpose computers.
+
+A.7.2 Associated characteristics
+Real-time characteristics are often associated with embedded systems (see A.11).
+
+© ISO/IEC 2022 - All rights reserved    41
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+A.7.3 Specialized testing
+
+Embedded software will, at some point, be integrated with and tested on the specialized target
+hardware for that embedded system.
+
+Some embedded systems will operate in a hostile environment. In such cases it may be necessary to use
+simulation to enable testing under extreme conditions.
+
+Some embedded systems may be expensive to fix after they have gone live due to their operational
+environment (e.g. they are part of a nuclear reactor) or due to the cost of fixing many systems that
+cannot be collected for repair (e.g. a washing machine controller). This high cost to fix often means that
+rigorous testing is needed.
+
+As embedded systems typically interact with specialized hardware, fault injection testing may be used
+to test the system's response to failures in that hardware.
+
+Embedded systems often have severe size, weight and cost constraints that mean they are often
+configured with the minimum amount of memory that can support the system. In such situations
+memory leakage testing can be appropriate.
+
+A.8 Fit and forget
+
+A.8.1 Description
+
+Fit and forget systems are those systems that will not (or cannot) be updated in their operational
+lifetime (e.g. deep space probes, underwater systems).
+
+A.8.2 Associated characteristics
+
+Typical associated characteristics are embedded (see A.7).
+
+A.8.3 Specialized testing
+
+Testing of fit and forget systems has to be more rigorous due to the problem of not being able to fix any
+defects after the system goes live.
+
+Fault injection testing may be used to test the robustness of the system in the event of internal and
+external failures.
+
+A.9 Internet of things (IoT)
+
+A.9.1 Description
+
+A scalable system based on internet technology that allows a wide range of devices (e.g. sensors,
+processing, or aggregation nodes and perhaps actuators) with varying degrees of computing power to
+communicate. Communication protocols and distances can vary, with most IoT systems communicating
+at three levels - between devices, at the edge (of the cloud), and across the cloud. IoT systems can
+comprise many devices from different vendors, making standardization of communication and
+specification of provided functionality especially important.
+
+IoT systems are often categorized as consumer IoT (e.g. wearables, connected cars) and industrial IoT
+(e.g. smart retail, transportation).
+
+A.9.2 Associated characteristics
+
+Partially embedded characteristics are sometimes associated with IoT systems (see A.7). For instance,
+a smart city IoT system typically uses many embedded subsystems that report back to a central non-
+embedded system.
+
+42                              © ISO/IEC 2022 - All rights reserved
+
+                                © IEEE 2022 - All rights reserved
+                                        ISO/IEC/IEEE 29119-1:2022(E)
+
+A.9.3 Specialized testing
+With multiple interacting devices in a single IoT system, compatibility testing can be used.
+Interoperability testing may be useful to test that the various devices from different vendors can
+communicate and understand each other.
+IoT systems often have the capability of replacing existing devices and adding new devices to the
+system, for which scalability testing may be useful.
+The need to comply with communications standards makes interface testing important.
+Industrial IoT tends to use lots of data, which may lead to general data privacy regulation (GDPR)
+concerns. This may affect testing as sanitized data will have to be used.
+There are also typically security concerns with IoT systems - so leading to the need for security testing.
+
+A.10 Mobile
+
+A.10.1 Description
+Mobile systems are typically portable computing devices without physical connections for
+communications or power (e.g. they are often battery-powered). Due to their need for portability, mobile
+devices are typically small enough to be hand-held. Examples of mobile devices are smartphones, media
+players, smart watches, and smart cards.
+
+A.10.2 Associated characteristics
+Typical associated characteristics are embedded (see A.7).
+
+A.10.3 Specialized testing
+Tests that simulate lost network connections (e.g. WiFi, cellular, Bluetooth) are often used.
+Tests based on power consumption and battery failure are often appropriate for battery-powered
+devices.
+Interoperability testing helps confirm that applications can work on multiple operating systems and
+devices.
+
+A.11 Real-time
+
+A.11.1 Description
+Real-time systems react to external events within a limited timespan (e.g. car collision avoidance
+system). A payroll system is not normally real-time as it can be run now, in 10 min, or overnight.
+Real-time systems often employ concurrency to achieve real-time performance.
+
+A.11.2 Associated characteristics
+There are no associated characteristics.
+
+A.11.3 Specialized testing
+Special testing is needed to test for failures due to the flawed design or implementation of concurrency.
+Performance testing is typically used to confirm that real-time constraints are met.
+
+© ISO/IEC 2022 - All rights reserved    43
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+A.12 Regulated
+
+A.12.1 Description
+
+In some domains regulations are in place requiring conformance of systems to specific requirements
+Those requirements are often documented as part of a standard. Regulations may be government-
+enforced or there may be industry self-regulation. Systems may be regulated to achieve a level of safety
+(see A.13) or to enforce legislation aimed at achieving a variety of goals, such as data privacy (e.g. GDPR).
+
+A.12.2 Associated characteristics
+
+There are no associated characteristics.
+
+A.12.3 Specialized testing
+
+Audits are often used to verify compliance with standards.
+Regulations are often a good source of software testing requirements.
+
+A.13 Safety-related
+
+A.13.1 Description
+
+Safety-related systems are those that, if they malfunction, can endanger human life, health, property, or
+the environment. Examples are flight control systems, medical devices, and fire control systems.
+
+These systems typically give rise to a special set of risks that are associated with assuring safety and
+freedom from hazards. Such risks are often identified from a safety/hazard analysis carried out in the
+early stages of development.
+
+Safety-related systems are typically required to comply with a relevant safety standard, such as
+IEC 61508 (functional safety of electrical/electronic/programmable electronic safety-related systems).
+
+A.13.2 Associated characteristics
+
+Typical associated characteristics are regulated (see A.12).
+
+A.13.3 Specialized testing
+
+Fault injection testing may be used to test error handling by the system (e.g. to check that a single
+failure does not cause a complete system failure).
+
+Testing may use simulation to test situations that would otherwise be too dangerous.
+
+A.14 Scientific/technical
+
+A.14.1 Description
+
+Scientific/technical software supports research and development in industry and academia, and often
+incorporates complex algorithms. Typical systems collect, manage, and analyse data, simulate the
+physical world, and support the visualization of results.
+
+Scientific/technical software is often aimed at the scientist end-user, who uses the software to
+undertake science in their particular domain - thus, much of this software is domain-specific.
+
+A.14.2 Associated characteristics
+
+There are no associated characteristics.
+
+44                              © ISO/IEC 2022 - All rights reserved
+
+                                © IEEE 2022 - All rights reserved
+                                                                                ISO/IEC/IEEE 29119-1:2022(E)
+
+A.14.3 Specialized testing
+Testing of complex algorithms typically requires specialist domain knowledge.
+For complex scientific/technical algorithms executable models are often used to perform early testing.
+The originality and complexity of the implemented algorithms may make it difficult to calculate
+expected results, and so metamorphic testing may be used.
+
+A.15 Web
+
+A.15.1 Description
+Web applications are based on a client-server architecture, where the client runs in a web browser and
+the backend often includes a database. Examples are online retail sales systems, online banking, and
+online office software.
+
+A.15.2 Associated characteristics
+Typical associated characteristics are mobile, where websites are optimized for use from mobile
+devices (see A.10).
+
+A.15.3 Specialized testing
+Due to the availability of web-based software to any internet user, there can be issues related to
+usability of the application by people with disabilities. These are typically addressed by accessibility
+testing.
+Security testing is often important due to the ease of access to the application.
+Load and response-time testing can be important in cases where websites attract a large number of
+concurrent users.
+
+© ISO/IEC 2022 - All rights reserved    45
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+                                 Annex B
+                              (informative)
+
+                              Testing roles
+
+There are a variety of names for the different roles within the test profession therefore this document
+does not provide a thorough list of different roles and responsibilities intended to be representative of
+
+the global testing profession. Instead, the following roles are outlined in so far as the person who can
+fill that role would be responsible for completing some aspect of the testing process outlined in this
+document. More than one person may have responsibility for each of the roles below.
+
+Test architect     Defines the test strategy, test environment and test plan for programmes and
+                   projects. Specifies the organizational test requirements and helps ensure con-
+                   formance to these requirements.
+
+Test manager       Develops, manages, and helps to ensure conformance with the test management
+                   process. The test manager also plans and controls the dynamic test process.
+
+Test designer      Develops the test design artefacts.
+
+MBT modeller       Develops formal test specifications in the form of models used to generate test
+                   cases as part of model-based testing.
+
+Test automator     Implements tests cases/scripts within a test automation framework.
+
+Tester             Develops the test deliverables and completes the processes associated with the
+                   dynamic test process.
+
+Test analyst       Develops oracles and/or analyses test results for correctness and issues.
+
+Specialist tester  Performs testing for specific quality characteristics, such as usability, accessi-
+                   bility, security, performance.
+
+In reality the processes outlined in this document are likely to be completed by a range of people with
+a range of job titles.
+
+46                                                      © ISO/IEC 2022 - All rights reserved
+
+                                                        © IEEE 2022 - All rights reserved
+                                                                                ISO/IEC/IEEE 29119-1:2022(E)
+
+                                     Bibliography
+
+[1] IEEE 1012, Standard for System, Software, and Hardware Verification and Validation
+[2] ISO/IEC 2382:2015, Information technology -- Vocabulary
+[3] ISO 10007, Quality management -- Guidelines for configuration management
+[4] ISO/IEC/IEEE 12207:2017, Systems and software engineering -- Software life cycle processes
+[5] ISO/IEC/IEEE 15288, Systems and software engineering -- System life cycle processes
+[6] ISO/IEC 20246, Software and systems engineering -- Work product reviews
+[7] ISO/IEC/IEEE 24765, Systems and software engineering -- Vocabulary
+[8] ISO/IEC 25000, Systems and software engineering -- Systems and software Quality Requirements
+
+         and Evaluation (SQuaRE) -- Guide to SQuaRE
+[9] ISO/IEC/IEEE 29119-2, Software and systems engineering -- Software testing -- Part 2: Test
+
+         processes
+[10] ISO/IEC/IEEE 29119-3, Software and systems engineering -- Software testing -- Part 3: Test
+
+         documentation
+[11] ISO/IEC/IEEE 29119-4:2021, Software and systems engineering -- Software testing -- Part 4: Test
+
+         techniques
+[12] ISO/IEC/IEEE 29119-5, Software and systems engineering -- Software testing -- Part 5: Keyword-
+
+         Driven Testing
+[13] ISO/IEC/TR 29119-11, Software and systems engineering -- Software testing -- Part 11: Guidelines
+
+         on the testing of AI-based systems
+[14] IEC 61508, Functional safety of electrical/electronic/programmable electronic safety-related
+
+         systems - Parts 1 to 7
+[15] Whittaker J., Thompson H., How to Break Software Security, Pearson Education, 2004
+[16] Whittaker J., Exploratory Software Testing, Pearson Education, 2010
+
+© ISO/IEC 2022 - All rights reserved    47
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+                            IEEE Notices and Abstract
+
+Important Notices and Disclaimers Concerning IEEE Standards Documents
+
+IEEE Standards documents are made available for use subject to important notices and legal disclaimers.
+These notices and disclaimers, or a reference to this page (https://standards.ieee.org/ipr/disclaimers
+.html), appear in all standards and may be found under the heading "Important Notices and Disclaimers
+Concerning IEEE Standards Documents."
+
+Notice and Disclaimer of Liability Concerning the Use of IEEE Standards Documents
+
+IEEE Standards documents are developed within the IEEE Societies and the Standards Coordinating
+Committees of the IEEE Standards Association (IEEE SA) Standards Board. IEEE develops its standards
+through an accredited consensus development process, which brings together volunteers representing
+varied viewpoints and interests to achieve the final product. IEEE Standards are documents developed
+by volunteers with scientific, academic, and industry-based expertise in technical working groups.
+Volunteers are not necessarily members of IEEE or IEEE SA, and participate without compensation from
+IEEE. While IEEE administers the process and establishes rules to promote fairness in the consensus
+development process, IEEE does not independently evaluate, test, or verify the accuracy of any of the
+information or the soundness of any judgments contained in its standards.
+
+IEEE does not warrant or represent the accuracy or completeness of the material contained in its
+standards, and expressly disclaims all warranties (express, implied and statutory) not included in
+this or any other document relating to the standard, including, but not limited to, the warranties of:
+merchantability; fitness for a particular purpose; non-infringement; and quality, accuracy, effectiveness,
+currency, or completeness of material. In addition, IEEE disclaims any and all conditions relating to
+results and workmanlike effort. In addition, IEEE does not warrant or represent that the use of the
+material contained in its standards is free from patent infringement. IEEE Standards documents are
+supplied "AS IS" and "WITH ALL FAULTS."
+
+Use of an IEEE standard is wholly voluntary. The existence of an IEEE Standard does not imply that
+there are no other ways to produce, test, measure, purchase, market, or provide other goods and
+services related to the scope of the IEEE standard. Furthermore, the viewpoint expressed at the time a
+standard is approved and issued is subject to change brought about through developments in the state
+of the art and comments received from users of the standard.
+
+In publishing and making its standards available, IEEE is not suggesting or rendering professional or
+other services for, or on behalf of, any person or entity, nor is IEEE undertaking to perform any duty
+owed by any other person or entity to another. Any person utilizing any IEEE Standards document,
+should rely upon his or her own independent judgment in the exercise of reasonable care in any given
+circumstances or, as appropriate, seek the advice of a competent professional in determining the
+appropriateness of a given IEEE standard.
+
+IN NO EVENT SHALL IEEE BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO: THE NEED
+TO PROCURE SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+OF THE PUBLICATION, USE OF, OR RELIANCE UPON ANY STANDARD, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE AND REGARDLESS OF WHETHER SUCH DAMAGE WAS FORESEEABLE.
+
+Translations
+
+The IEEE consensus development process involves the review of documents in English only. In the event
+that an IEEE standard is translated, only the English version published by IEEE is the approved IEEE
+standard.
+
+48     © ISO/IEC 2022 - All rights reserved
+
+       © IEEE 2022 - All rights reserved
+                                        ISO/IEC/IEEE 29119-1:2022(E)
+
+Official statements
+
+A statement, written or oral, that is not processed in accordance with the IEEE SA Standards Board
+Operations Manual shall not be considered or inferred to be the official position of IEEE or any of
+its committees and shall not be considered to be, nor be relied upon as, a formal position of IEEE. At
+lectures, symposia, seminars, or educational courses, an individual presenting information on IEEE
+standards shall make it clear that the presenter's views should be considered the personal views of that
+individual rather than the formal position of IEEE, IEEE SA, the Standards Committee, or the Working
+Group.
+
+Comments on standards
+
+Comments for revision of IEEE Standards documents are welcome from any interested party, regardless
+of membership affiliation with IEEE or IEEE SA. However, IEEE does not provide interpretations,
+consulting information, or advice pertaining to IEEE Standards documents.
+
+Suggestions for changes in documents should be in the form of a proposed change of text, together with
+appropriate supporting comments. Since IEEE standards represent a consensus of concerned interests,
+it is important that any responses to comments and questions also receive the concurrence of a
+balance of interests. For this reason, IEEE and the members of its Societies and Standards Coordinating
+Committees are not able to provide an instant response to comments, or questions except in those
+cases where the matter has previously been addressed. For the same reason, IEEE does not respond
+to interpretation requests. Any person who would like to participate in evaluating comments or in
+revisions to an IEEE standard is welcome to join the relevant IEEE working group. You can indicate
+interest in a working group using the Interests tab in the Manage Profile & Interests area of the
+IEEE SA myProject system. An IEEE Account is needed to access the application.
+
+Comments on standards should be submitted using the Contact Us form.
+
+Laws and regulations
+
+Users of IEEE Standards documents should consult all applicable laws and regulations. Compliance
+with the provisions of any IEEE Standards document does not constitute compliance to any applicable
+regulatory requirements. Implementers of the standard are responsible for observing or referring to
+the applicable regulatory requirements. IEEE does not, by the publication of its standards, intend to
+urge action that is not in compliance with applicable laws, and these documents may not be construed
+as doing so.
+
+Data privacy
+
+Users of IEEE Standards documents should evaluate the standards for considerations of data privacy
+and data ownership in the context of assessing and using the standards in compliance with applicable
+laws and regulations.
+
+Copyrights
+
+IEEE draft and approved standards are copyrighted by IEEE under US and international copyright
+laws. They are made available by IEEE and are adopted for a wide variety of both public and private
+uses. These include both use, by reference, in laws and regulations, and use in private self-regulation,
+standardization, and the promotion of engineering practices and methods. By making these documents
+available for use and adoption by public authorities and private users, IEEE does not waive any rights in
+copyright to the documents.
+
+Photocopies
+
+Subject to payment of the appropriate licensing fees, IEEE will grant users a limited, non-exclusive
+license to photocopy portions of any individual standard for company or organizational internal
+use or individual, non-commercial use only. To arrange for payment of licensing fees, please contact
+Copyright Clearance Center, Customer Service, 222 Rosewood Drive, Danvers, MA 01923 USA; +1 978
+750 8400; https://www.copyright.com/. Permission to photocopy portions of any individual standard
+for educational classroom use can also be obtained through the Copyright Clearance Center.
+
+© ISO/IEC 2022 - All rights reserved    49
+
+© IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+Updating of IEEE Standards documents
+
+Users of IEEE Standards documents should be aware that these documents may be superseded at
+any time by the issuance of new editions or may be amended from time to time through the issuance
+of amendments, corrigenda, or errata. An official IEEE document at any point in time consists of the
+current edition of the document together with any amendments, corrigenda, or errata then in effect.
+
+Every IEEE standard is subjected to review at least every 10 years. When a document is more than
+10 years old and has not undergone a revision process, it is reasonable to conclude that its contents,
+although still of some value, do not wholly reflect the present state of the art. Users are cautioned to
+check to determine that they have the latest edition of any IEEE standard.
+
+In order to determine whether a given document is the current edition and whether it has been amended
+through the issuance of amendments, corrigenda, or errata, visit IEEE Xplore or contact IEEE. For more
+information about the IEEE SA or IEEE's standards development process, visit the IEEE SA Website.
+
+Errata
+
+Errata, if any, for all IEEE standards can be accessed on the IEEE SA Website. Search for standard
+number and year of approval to access the web page of the published standard. Errata links are located
+under the Additional Resources Details section. Errata are also available in IEEE Xplore. Users are
+encouraged to periodically check for errata.
+
+Patents
+
+IEEE Standards are developed in compliance with the IEEE SA Patent Policy.
+
+IMPORTANT NOTICE
+
+IEEE Standards do not guarantee or ensure safety, security, health, or environmental protection, or
+ensure against interference with or from other devices or networks. IEEE Standards development
+activities consider research and information presented to the standards development group in
+developing any safety recommendations. Other information about safety practices, changes in
+technology or technology implementation, or impact by peripheral systems also may be pertinent
+to safety considerations during implementation of the standard. Implementers and users of IEEE
+Standards documents are responsible for determining and complying with all appropriate safety,
+security, environmental, health, and interference protection practices and all applicable laws and
+regulations.
+
+Abstract
+
+ The purpose of the ISO/IEC/IEEE 29119 series of software testing standards is to define an
+ internationally-agreed set of standards for software testing that can be used by any organization
+ when performing any form of software testing. ISO/IEC/IEEE 29119-1 facilitates the use of the other
+ ISO/IEC/IEEE 29119 standards by introducing the general concepts on which these standards are
+ built. ISO/IEC/IEEE 29119-1 is informative, providing a starting point, context, and guidance for the
+ other parts.
+
+ Keywords: 29119, 29119-1, software testing
+
+50     © ISO/IEC 2022 - All rights reserved
+
+       © IEEE 2022 - All rights reserved
+ISO/IEC/IEEE 29119-1:2022(E)
+
+ICS35.080
+ISBN 978-1-5044-8251-6 STD25141 (PDF); 978-1-5044-8252-3 STDPD25141 (Print)
+
+Price based on 47 pages
+
+© ISO/IEC 2022 - All rights reserved  
+
+© IEEE 2022 - All rights reserved

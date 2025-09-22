@@ -1,0 +1,144 @@
+---
+alwaysApply: true
+---
+
+# MCP Tool Rules - Manual QA Framework
+
+## MCP Server Configuration
+
+### Active MCP Servers
+- **Context7**: Library documentation lookup and code examples
+- **Reflection Tool**: Structured reasoning and meta-cognitive analysis
+
+### Server Configuration File
+**Location**: User-level MCP configuration file
+
+**Current Configuration**:
+```json
+{
+  "mcpServers": {
+    "context7": {
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-8646c6e9-6fda-4fbb-b3f8-a18296dd74c2"
+      }
+    },
+    "reflection-tool": {
+      "command": "npx",
+      "args": ["mcp-reflection-tool"]
+    }
+  }
+}
+```
+
+## MCP Tool Usage Guidelines
+
+### Context7 Server
+**Purpose**: Access to up-to-date library documentation and code examples
+
+**Available Tools**:
+- `mcp_context7_resolve-library-id`: Find library IDs for documentation lookup
+- `mcp_context7_get-library-docs`: Retrieve library documentation with code examples
+
+**Usage Examples**:
+- Resolve library: `mcp_context7_resolve-library-id` with library name (e.g., "next.js")
+- Get docs: `mcp_context7_get-library-docs` with resolved library ID and optional topic/tokens
+
+**Best Practices**:
+- Always resolve library ID first before getting documentation
+- Use specific topics to focus documentation retrieval
+- Leverage for framework-specific testing guidance (React, Node.js, etc.)
+
+### Reflection Tool
+**Purpose**: Enhanced reasoning and structured thinking for complex problems
+
+**Available Tools**:
+- `mcp_reflection-tool_reflect`: Structured reasoning and meta-cognitive analysis
+
+**Usage Guidelines**:
+- Use for complex problem decomposition
+- Apply when multi-step analysis is required
+- Leverage for comprehensive test strategy development
+- Use for debugging complex multi-component issues
+
+**Best Practices**:
+- Break down complex problems into structured components
+- Consider multiple perspectives and failure scenarios
+- Use for security analysis and risk assessment
+- Apply for comprehensive QA strategy development
+
+## Integration with QA Framework
+
+### Test Case Generation
+- **Context7**: Use for framework-specific testing patterns and best practices
+- **Reflection Tool**: Use for complex test scenario decomposition and edge case identification
+
+### Bug Report Analysis
+- **Context7**: Reference library-specific known issues and solutions
+- **Reflection Tool**: Analyze root cause analysis and impact assessment
+
+### Test Planning
+- **Context7**: Access testing framework documentation and examples
+- **Reflection Tool**: Develop comprehensive test strategies and risk-based testing approaches
+
+## Security Considerations
+
+### API Key Management
+- Context7 API key stored in user-level MCP configuration
+- Never commit API keys to repository
+- Use environment variables for production deployments
+- Keep sensitive configuration files outside version control
+
+### Tool Access Control
+- MCP tools run with current user permissions
+- Reflection tool requires Node.js/npx availability
+- Context7 requires network access to mcp.context7.com
+
+## Troubleshooting
+
+### Common Issues
+1. **Reflection Tool Not Available**:
+   - Verify Node.js installation: `node -v`
+   - Check npx availability: `npx -v`
+   - Ensure PowerShell execution policy allows scripts
+
+2. **Context7 Connection Issues**:
+   - Verify API key is valid and active
+   - Check network connectivity to mcp.context7.com
+   - Ensure proper Accept headers in requests
+
+3. **MCP Server Not Loading**:
+   - Restart Cursor after configuration changes
+   - Verify JSON syntax in MCP configuration file
+   - Check server-specific requirements (Node.js, network access)
+
+### Verification Commands
+```powershell
+# Verify Node.js and npx
+node -v
+npx -v
+
+# Test reflection tool
+npx -y mcp-reflection-tool --help
+
+# Test Context7 connectivity
+curl -H "Accept: application/json, text/event-stream" -H "CONTEXT7_API_KEY: $env:CONTEXT7_API_KEY" https://mcp.context7.com/mcp
+```
+
+## Future Enhancements
+
+### Planned MCP Servers
+- JIRA MCP server for direct ticket management
+- Database MCP server for test data management
+- API testing MCP server for automated test execution
+
+### Integration Roadmap
+- Automated test case generation using Context7 + Reflection Tool
+- Bug report enhancement with library-specific solutions
+- Test strategy optimization using structured reasoning
+
+## Notes
+- MCP servers are loaded on Cursor startup
+- Configuration changes require Cursor restart
+- Tools are available across all Cursor sessions
+- Server status can be verified through tool availability in interface
