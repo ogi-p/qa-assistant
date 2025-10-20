@@ -1,0 +1,14 @@
+#!/bin/sh
+# Block pushing directly to main unless explicitly allowed
+while read local_ref local_sha remote_ref remote_sha
+ do
+  case   in
+    refs/heads/main|refs/heads/master)
+      if [  != 1 ]; then
+        echo Push to is blocked. Create a PR from a feature branch or set ALLOW_MAIN_PUSH=1 or use --no-verify to override. 1>&2
+        exit 1
+      fi
+    ;;
+  esac
+ done
+exit 0

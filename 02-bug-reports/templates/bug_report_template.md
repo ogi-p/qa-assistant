@@ -88,6 +88,8 @@ Before creating this bug report, ensure you have completed all of these tasks:
 - **Network Tab**: [Any failed requests or unusual responses]
 - **Device**: [Desktop, Mobile, Tablet]
 
+**Environment Specification**: The "highest" environment must be specified. If you find a bug on Dev, but it is also actual for Stage, then Environment is Stage.
+
 **System Information**:
 - Operating system (version)
 - Browser (version)
@@ -96,46 +98,17 @@ Before creating this bug report, ensure you have completed all of these tasks:
 
 ## 5. Impact Assessment
 **Severity Level** (Company Standards):
-- [ ] **P0**: Site Outage
-- [ ] **P1**: Trust/Data Issues & Data Feed/API issues
-- [ ] **P2**: Broken Functionality With No Work Around
-- [ ] **P3**: Broken Functionality With Work Around
-- [ ] **P4**: Usability Concerns
-- [ ] **5MF**: Five Minute Fix
+- Low
+- Medium
+- High
 
-**Environment Specification**: The "highest" environment must be specified. If you find a bug on Dev, but it is also actual for Stage, then Environment is Stage.
-
-**User Impact**: How does this affect end users?
-
-**Business Impact**: How does this affect business operations?
-
----
-
-## 6. Requirement Coverage
-**Affected Requirements**: 
-- [ ] Req-1-1: [Requirement description]
-- [ ] Req-1-2: [Requirement description]
-- [ ] [Add more as needed]
-
-**Requirement Violation**: How does this bug violate the specified requirements?
-
----
+--
 
 ## 7. Test Plan Traceability
 **Test Case ID**: [TC-XXX]
-**Test Type**: [Functional, Non-functional, Security, Performance, etc.]
-**Risk Level**: [High, Medium, Low]
-**Test Charter**: [If exploratory testing was used]
 
 ---
 
-## 8. Reproducibility
-**Frequency**: 
-- [ ] Always (100%)
-- [ ] Often (80-99%)
-- [ ] Sometimes (50-79%)
-- [ ] Rarely (1-49%)
-- [ ] Once (0%)
 
 **Conditions**: 
 - [ ] Specific time of day
@@ -155,14 +128,6 @@ Before creating this bug report, ensure you have completed all of these tasks:
 **Assigned To**: [Developer name if known]
 **QA Assignee**: [QA team member if known]
 
-**Optional Fields**:
-- **Story Points**: [Empty by default]
-- **Epic Link**: [Empty by default]
-- **Sprint**: [Empty by default]
-- **Labels**: [Team label if known]
-- **Mayer's Sprint Report Fields**: [Set to "Tech"]
-
-**Requirement Reference**: [Explicit reference to requirement IDs]
 
 ---
 
@@ -173,19 +138,7 @@ Before creating this bug report, ensure you have completed all of these tasks:
 
 **Notes**: Any additional context or observations
 
----
 
-## 11. Verification Checklist
-- [ ] Bug is clearly described
-- [ ] Steps to reproduce are complete and accurate
-- [ ] Evidence is provided (screenshots, logs, etc.)
-- [ ] Impact is properly assessed
-- [ ] Requirements are mapped
-- [ ] Technical details are included
-- [ ] Reproducibility is documented
-- [ ] All metadata fields are completed
-
----
 
 **Template Version**: 1.0
 **Last Updated**: [Date]
