@@ -20,7 +20,7 @@ Before you start, make sure you have:
 Open your terminal and run:
 
 ```bash
-git clone https://github.com/Fearthepencil/QA-Manual-Framework.git
+git clone https://github.com/ogi-p/qa-assistant.git
 cd QA-Manual-Framework
 ```
 
@@ -49,12 +49,12 @@ touch .env
 Open the `.env` file and add your Jira credentials:
 
 ```env
-JIRA_MCP_LOGIN=your-email@compstak.com
+JIRA_MCP_LOGIN=your-email@your-company.com
 JIRA_MCP_TOKEN=your-api-token-here
 ```
 
 **Replace with your actual values:**
-- `your-email@compstak.com` → Your CompStak Jira email address
+- `your-email@your-company.com` → Your company JIRA email address
 - `your-api-token-here` → The API token you created in step 2.1
 
 ---

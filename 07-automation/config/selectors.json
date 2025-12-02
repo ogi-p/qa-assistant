@@ -1,0 +1,66 @@
+{
+  "login": {
+    "emailInput": "input[name='email'], input[type='email'], #email",
+    "passwordInput": "input[name='password'], input[type='password'], #password",
+    "submitButton": "button[type='submit'], input[type='submit'], button:has-text('Log in')",
+    "errorMessage": ".error-message, .alert-danger, [role='alert']",
+    "successMessage": ".success-message, .alert-success"
+  },
+  "navigation": {
+    "mainMenu": "nav, [role='navigation']",
+    "searchLink": "a[href*='search'], button:has-text('Search')",
+    "foldersLink": "a[href*='folders'], button:has-text('Folders')",
+    "profileMenu": "[data-testid='profile-menu'], .user-profile, .profile-dropdown",
+    "logoutButton": "a:has-text('Logout'), button:has-text('Logout'), a:has-text('Sign out')"
+  },
+  "search": {
+    "searchInput": "input[name='search'], input[placeholder*='Search'], [data-testid='search-input']",
+    "searchButton": "button[type='submit'], button:has-text('Search'), [data-testid='search-button']",
+    "resultsContainer": ".search-results, [data-testid='search-results'], .results-list",
+    "resultItem": ".result-item, [data-testid='result-item'], .comp-item",
+    "noResults": ".no-results, [data-testid='no-results'], .empty-state",
+    "filterButton": "button:has-text('Filter'), [data-testid='filter-button']",
+    "sortDropdown": "select[name='sort'], [data-testid='sort-dropdown']"
+  },
+  "folders": {
+    "createButton": "button:has-text('Create'), button:has-text('New Folder'), [data-testid='create-folder']",
+    "folderNameInput": "input[name='folderName'], input[placeholder*='folder name'], [data-testid='folder-name-input']",
+    "saveButton": "button:has-text('Save'), button[type='submit'], [data-testid='save-folder']",
+    "cancelButton": "button:has-text('Cancel'), [data-testid='cancel-button']",
+    "folderItem": ".folder-item, [data-testid='folder-item']",
+    "renameButton": "button:has-text('Rename'), [data-testid='rename-folder']",
+    "deleteButton": "button:has-text('Delete'), [data-testid='delete-folder']",
+    "confirmDelete": "button:has-text('Confirm'), button:has-text('Yes'), [data-testid='confirm-delete']",
+    "addToFolderButton": "button:has-text('Add to Folder'), [data-testid='add-to-folder']",
+    "removeFromFolderButton": "button:has-text('Remove'), [data-testid='remove-from-folder']"
+  },
+  "comps": {
+    "compItem": ".comp-item, [data-testid='comp-item']",
+    "compDetailView": ".comp-detail, [data-testid='comp-detail']",
+    "buyerField": "[data-testid='buyer'], .buyer-field",
+    "sellerField": "[data-testid='seller'], .seller-field",
+    "transactionSizeField": "[data-testid='transaction-size'], .transaction-size",
+    "addressField": "[data-testid='address'], .address-field"
+  },
+  "modals": {
+    "modalContainer": ".modal, [role='dialog'], [data-testid='modal']",
+    "modalTitle": ".modal-title, .modal-header h1, [data-testid='modal-title']",
+    "modalBody": ".modal-body, [data-testid='modal-body']",
+    "modalClose": ".modal-close, button[aria-label='Close'], [data-testid='modal-close']"
+  },
+  "forms": {
+    "textInput": "input[type='text'], input:not([type])",
+    "submitButton": "button[type='submit'], input[type='submit']",
+    "resetButton": "button[type='reset'], button:has-text('Reset')",
+    "requiredField": "input[required], [aria-required='true']",
+    "errorMessage": ".error, .field-error, [role='alert']"
+  },
+  "common": {
+    "loadingSpinner": ".loading, .spinner, [data-testid='loading']",
+    "successToast": ".toast-success, .notification-success, [role='status']",
+    "errorToast": ".toast-error, .notification-error, [role='alert']",
+    "confirmButton": "button:has-text('Confirm'), button:has-text('Yes'), button:has-text('OK')",
+    "cancelButton": "button:has-text('Cancel'), button:has-text('No')"
+  }
+}
+

@@ -20,7 +20,7 @@ if (Test-Path $envFile) {
 }
 
 # Configuration from environment variables
-$JIRA_URL = "https://compstak.atlassian.net"
+$JIRA_URL = "https://your-company.atlassian.net"
 $EMAIL = $env:JIRA_MCP_LOGIN
 $API_TOKEN = $env:JIRA_MCP_TOKEN
 

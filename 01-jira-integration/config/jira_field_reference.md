@@ -378,7 +378,7 @@ Content-Type: application/json
 
 ### Create Ticket
 ```bash
-POST https://compstak.atlassian.net/rest/api/3/issue
+POST https://your-company.atlassian.net/rest/api/3/issue
 ```
 
 ## Notes

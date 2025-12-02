@@ -23,11 +23,17 @@ qa-manual-framework/
 ├── 02-bug-reports/               # Bug reporting system
 ├── 03-test-plans/                # Test planning and execution
 ├── 04-projects/                  # Project-specific testing
+│   ├── folders/                  # Folders project
 │   └── ownership-entity/         # Ownership Entity System (OES)
 │       ├── project documentation/ # OES system documentation
 │       └── project rules/        # OES testing guidelines
 ├── 05-utilities/                 # Testing tools and scripts
 ├── 06-documentation/             # Guides, standards, references
+├── 07-automation/                # 🆕 Playwright automation
+│   ├── scripts/                  # Automated test scripts
+│   ├── templates/                # Test generation templates
+│   ├── commands/                 # CLI commands for automation
+│   └── config/                   # Automation configuration
 └── .cursor/                      # Cursor IDE configuration
 ```
 
@@ -35,8 +41,8 @@ qa-manual-framework/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/compstak/QA-Manual-Framework.git
-cd QA-Manual-Framework
+git clone https://github.com/ogi-p/qa-assistant.git
+cd qa-assistant
 ```
 
 ### 2. Set Up JIRA Integration
@@ -45,7 +51,8 @@ Follow the [JIRA Environment Setup Guide](06-documentation/guides/jira_env_setup
 ### 3. Choose Your Workflow
 - **Bug Reporting**: Use enhanced templates in `02-bug-reports/templates/`
 - **Test Planning**: Start with enhanced templates in `03-test-plans/template/`
-- **Project Testing**: Check `04-projects/ownership-entity/project rules/`
+- **Project Testing**: Check `04-projects/` for project-specific documentation
+- **Automated Testing**: Use Playwright automation in `07-automation/`
 - **AI Assistant**: Use Igor for test case generation and QA guidance
 
 ### 4. Quick Start Guide
@@ -89,7 +96,7 @@ bash "01-jira-integration/commands/show_my_tickets.sh"
 ### 🔧 Command Configuration
 
 All commands use the same JIRA configuration:
-- **JIRA URL**: `https://compstak.atlassian.net`
+- **JIRA URL**: `https://your-company.atlassian.net`
 - **Authentication**: Basic Auth with email and API token
 - **API Version**: JIRA REST API v3
 
@@ -106,6 +113,7 @@ Additional commands available:
 - Enhanced JIRA MCP server integration
 - Ticket creation and management tools
 - Bug report generation utilities
+- **Playwright Automation Commands** (see `07-automation/` for details)
 
 ## 🛠️ Key Features
 
@@ -136,6 +144,15 @@ Additional commands available:
 - Environment-aware template usage
 - Best practices enforcement and guidance
 
+### 🎭 Playwright Automation (NEW!)
+- Convert manual test cases to automated Playwright scripts
+- Record user interactions and generate test code
+- Visual regression testing with screenshot comparison
+- API testing integration
+- Cross-browser and cross-platform support
+- CI/CD integration ready
+- Comprehensive test reporting and metrics
+
 ## 📚 Documentation
 
 ### 🎓 Guides
@@ -155,6 +172,11 @@ Additional commands available:
 - [Folders Project](04-projects/folders/) - Folder management functionality (Phase 1)
 - [Ownership Entity](04-projects/ownership-entity/) - OES system documentation
 
+### 🎭 Automation
+- [Playwright Integration](07-automation/README.md) - Automated testing with Playwright MCP
+- [Integration Guide](07-automation/INTEGRATION_GUIDE.md) - How automation integrates with manual testing
+- [Test Generation](07-automation/commands/) - CLI commands for test automation
+
 ## 🔧 Configuration
 
 Create a `.env` file in `01-jira-integration/config/.env`:
@@ -162,7 +184,7 @@ Create a `.env` file in `01-jira-integration/config/.env`:
 1. **Copy the template**: `cp 01-jira-integration/config/env.template 01-jira-integration/config/.env`
 2. **Edit the file**: Replace the placeholder values with your actual credentials:
 ```env
-JIRA_MCP_LOGIN=your.email@compstak.com
+JIRA_MCP_LOGIN=your.email@your-company.com
 JIRA_MCP_TOKEN=your_api_token_here
 ```
 
@@ -180,8 +202,8 @@ JIRA_MCP_TOKEN=your_api_token_here
 
 **1. Create Your Feature Branch**
 ```bash
-git clone https://github.com/compstak/QA-Manual-Framework.git
-cd QA-Manual-Framework
+git clone https://github.com/ogi-p/qa-assistant.git
+cd qa-assistant
 git checkout -b feature/your-feature-name
 ```
 

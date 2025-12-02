@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to find all tickets where Ognjen Putniković is assigned as QA Assignee
+# Script to find all tickets where current user is assigned as QA Assignee
 # Loads credentials from .env file
 
 # Get the directory where this script is located
@@ -24,14 +24,14 @@ if [ -z "$JIRA_MCP_LOGIN" ] || [ -z "$JIRA_MCP_TOKEN" ]; then
     exit 1
 fi
 
-echo "🔍 Finding tickets where Ognjen Putniković is QA Assignee..."
+echo "🔍 Finding tickets where you are assigned as QA Assignee..."
 echo "============================================================"
 echo ""
 
 # Get all QA-related tickets
 echo "📋 Step 1: Getting QA-related tickets..."
 qa_tickets=$(curl -s -u "$JIRA_MCP_LOGIN:$JIRA_MCP_TOKEN" \
-    "https://compstak.atlassian.net/rest/api/3/search" \
+    "https://your-company.atlassian.net/rest/api/3/search" \
     -H "Content-Type: application/json" \
     -d '{
         "jql": "project = AP AND (summary ~ \"QA\" OR summary ~ \"test\" OR summary ~ \"Test\") AND status != \"Done\"",
@@ -62,12 +62,14 @@ echo "$qa_tickets" | jq -r '.issues[] | .key' | while read -r ticket_key; do
     
     # Get ticket details with QA Assignee field
     ticket_data=$(curl -s -u "$JIRA_MCP_LOGIN:$JIRA_MCP_TOKEN" \
-        "https://compstak.atlassian.net/rest/api/3/issue/$ticket_key?expand=names,schema")
+        "https://your-company.atlassian.net/rest/api/3/issue/$ticket_key?expand=names,schema")
     
-    # Check if QA Assignee field exists and is set to Ognjen Putniković
+    # Check if QA Assignee field exists and matches current user
     qa_assignee=$(echo "$ticket_data" | jq -r '.fields.customfield_11207.displayName // empty')
+    current_user=$(curl -s -u "$JIRA_MCP_LOGIN:$JIRA_MCP_TOKEN" \
+        "https://your-company.atlassian.net/rest/api/3/myself" | jq -r '.displayName')
     
-    if [ "$qa_assignee" = "Ognjen Putniković" ]; then
+    if [ "$qa_assignee" = "$current_user" ]; then
         found_count=$((found_count + 1))
         summary=$(echo "$ticket_data" | jq -r '.fields.summary')
         status=$(echo "$ticket_data" | jq -r '.fields.status.name')
@@ -86,5 +88,5 @@ echo ""
 echo "============================================================"
 echo "🎯 Summary:"
 echo "   Total QA-related tickets checked: $checked_count"
-echo "   Tickets with Ognjen Putniković as QA Assignee: $found_count"
+echo "   Tickets assigned to you as QA Assignee: $found_count"
 echo "============================================================"

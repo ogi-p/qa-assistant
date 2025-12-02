@@ -57,7 +57,7 @@ read_ticket() {
     echo "============================================================"
     
     local response=$(curl -s -u "$JIRA_MCP_LOGIN:$JIRA_MCP_TOKEN" \
-        "https://compstak.atlassian.net/rest/api/3/issue/$ticket_id?expand=names,schema")
+        "https://your-company.atlassian.net/rest/api/3/issue/$ticket_id?expand=names,schema")
     
     if echo "$response" | jq -e '.errorMessages' > /dev/null 2>&1; then
         echo "Error: $(echo "$response" | jq -r '.errorMessages[0]')"
@@ -84,7 +84,7 @@ search_tickets() {
     echo "============================================================"
     
     local response=$(curl -s -u "$JIRA_MCP_LOGIN:$JIRA_MCP_TOKEN" \
-        "https://compstak.atlassian.net/rest/api/3/search" \
+        "https://your-company.atlassian.net/rest/api/3/search" \
         -H "Content-Type: application/json" \
         -d "{
             \"jql\": \"$jql\",
@@ -134,7 +134,7 @@ get_comments() {
     echo "============================================================"
     
     local response=$(curl -s -u "$JIRA_MCP_LOGIN:$JIRA_MCP_TOKEN" \
-        "https://compstak.atlassian.net/rest/api/3/issue/$ticket_id/comment")
+        "https://your-company.atlassian.net/rest/api/3/issue/$ticket_id/comment")
     
     if echo "$response" | jq -e '.errorMessages' > /dev/null 2>&1; then
         echo "Error: $(echo "$response" | jq -r '.errorMessages[0]')"
@@ -154,7 +154,7 @@ case "${1:-help}" in
         echo "Starting JIRA MCP Server for ticket creation..."
         echo "============================================================"
         npx @timbreeding/jira-mcp-server@latest \
-            --jira-base-url=https://compstak.atlassian.net \
+            --jira-base-url=https://your-company.atlassian.net \
             --jira-username="$JIRA_MCP_LOGIN" \
             --jira-api-token="$JIRA_MCP_TOKEN"
         ;;

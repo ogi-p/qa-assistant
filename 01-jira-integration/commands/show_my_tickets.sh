@@ -34,7 +34,7 @@ if [ -z "$JIRA_MCP_TOKEN" ]; then
 fi
 
 # Configuration from environment variables
-JIRA_URL="https://compstak.atlassian.net"
+JIRA_URL="https://your-company.atlassian.net"
 EMAIL="$JIRA_MCP_LOGIN"
 API_TOKEN="$JIRA_MCP_TOKEN"
 

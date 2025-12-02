@@ -1,0 +1,16 @@
+{
+  "name": "07-automation",
+  "version": "1.0.0",
+  "description": "This module integrates Playwright automation capabilities into the Manual QA Framework, enabling automated test generation, execution, and maintenance alongside manual testing workflows.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0"
+  }
+}

@@ -20,3 +20,27 @@ node_modules/
 # Cursor local state (keep rules, ignore transient)
 .cursor/*.log
 .cursor/cache/
+
+# Playwright MCP cache (root level)
+.playwright-mcp/
+screenshots/
+
+# Project-specific test artifacts (local only - all projects are local)
+04-projects/raynorqa-website/
+04-projects/*/
+!04-projects/folders/
+!04-projects/ownership-entity/
+
+# Automation artifacts (handled by 07-automation/.gitignore)
+# The subfolder .gitignore handles these, but adding for clarity:
+07-automation/node_modules/
+07-automation/package-lock.json
+07-automation/test-results/
+07-automation/playwright-report/
+07-automation/.playwright-mcp/
+07-automation/screenshots/actual/
+07-automation/screenshots/diff/
+07-automation/recordings/*.webm
+07-automation/recordings/*.mp4
+07-automation/recordings/*.json
+07-automation/reports/

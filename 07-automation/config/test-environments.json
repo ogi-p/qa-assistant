@@ -1,0 +1,117 @@
+{
+  "dev": {
+    "name": "Development",
+    "url": "https://dev.yourapp.com",
+    "apiUrl": "https://api-dev.yourapp.com",
+    "jiraEnvironment": "Dev",
+    "users": {
+      "admin": {
+        "email": "qa_admin@yourcompany.com",
+        "vaultPath": "qa/users/admin",
+        "roles": ["admin", "qa"]
+      },
+      "standard_user": {
+        "email": "test_user@yourcompany.com",
+        "vaultPath": "qa/users/standard",
+        "roles": ["user"]
+      },
+      "power_user": {
+        "email": "power_user@yourcompany.com",
+        "vaultPath": "qa/users/power",
+        "roles": ["power_user"]
+      },
+      "readonly_user": {
+        "email": "readonly@yourcompany.com",
+        "vaultPath": "qa/users/readonly",
+        "roles": ["readonly"]
+      }
+    },
+    "features": {
+      "feature1": true,
+      "feature2": true,
+      "feature3": false
+    },
+    "timeouts": {
+      "pageLoad": 30000,
+      "apiRequest": 10000,
+      "elementWait": 5000
+    }
+  },
+  "staging": {
+    "name": "Staging",
+    "url": "https://staging.yourapp.com",
+    "apiUrl": "https://api-staging.yourapp.com",
+    "jiraEnvironment": "Stage",
+    "users": {
+      "admin": {
+        "email": "qa_admin@yourcompany.com",
+        "vaultPath": "qa/users/admin_staging",
+        "roles": ["admin", "qa"]
+      },
+      "standard_user": {
+        "email": "test_user@yourcompany.com",
+        "vaultPath": "qa/users/standard_staging",
+        "roles": ["user"]
+      },
+      "power_user": {
+        "email": "power_user@yourcompany.com",
+        "vaultPath": "qa/users/power_staging",
+        "roles": ["power_user"]
+      },
+      "readonly_user": {
+        "email": "readonly@yourcompany.com",
+        "vaultPath": "qa/users/readonly_staging",
+        "roles": ["readonly"]
+      }
+    },
+    "features": {
+      "feature1": true,
+      "feature2": true,
+      "feature3": true
+    },
+    "timeouts": {
+      "pageLoad": 30000,
+      "apiRequest": 10000,
+      "elementWait": 5000
+    }
+  },
+  "production": {
+    "name": "Production",
+    "url": "https://app.yourapp.com",
+    "apiUrl": "https://api.yourapp.com",
+    "jiraEnvironment": "Prod",
+    "users": {
+      "admin": {
+        "email": "qa_admin@yourcompany.com",
+        "vaultPath": "qa/users/admin_prod",
+        "roles": ["admin", "qa"]
+      },
+      "standard_user": {
+        "email": "test_user@yourcompany.com",
+        "vaultPath": "qa/users/standard_prod",
+        "roles": ["user"]
+      },
+      "power_user": {
+        "email": "power_user@yourcompany.com",
+        "vaultPath": "qa/users/power_prod",
+        "roles": ["power_user"]
+      },
+      "readonly_user": {
+        "email": "readonly@yourcompany.com",
+        "vaultPath": "qa/users/readonly_prod",
+        "roles": ["readonly"]
+      }
+    },
+    "features": {
+      "feature1": true,
+      "feature2": true,
+      "feature3": true
+    },
+    "timeouts": {
+      "pageLoad": 30000,
+      "apiRequest": 10000,
+      "elementWait": 5000
+    }
+  }
+}
+
